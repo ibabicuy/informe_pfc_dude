@@ -1,15 +1,14 @@
 \chapter{Recomendaciones}
 
-deberiamos hablar que somos dependientes de las actualizaciones de mycroft? tendriamos que averiguar eso bien, por si en la muestra nos preguntan que pasa si vendemos el producto. puede que mycroft actualice y se rompa todo?
+\section{Cosas a mejorar}
 
-configuracion de RPi 
+Debido a los tiempos manejados no fue posible implementar la adición de Sonoff dual al proyecto. Siendo que todas las estructuras soportan estas variaciones y es cuestión de modificar el software para este nuevo dispositivo e implementar una vista en la aplicación.
+Otro dispositivo que se desea añadir al sistema es un emisor infrarrojo para poder controlar aires acondicionados, se manejó la idea de conectar un Sonoff en la alimentación de corriente del AC, pero debido a que los aires inversores pueden presentar averías si se les corta la corriente consideramos dejar esto de lado y esperar a desarrollar este nevo módulo.
 
-conexion entre Rpi y celular es manual, deberia ser mas transparente capaz
+Se desea en el futuro contar con una inicialización automatizada del componente principal, permitiendo una instalación de todos los componentes conectando una tarjeta SD en un Raspberry Pi instalados, el cual montaría esta tarjeta conectada e instalaría tanto el SO como las librerías y repositorios necesarios. Luego se generarían las contraseñas necesarias que se compartirán con las interfaces una vez autenticadas.
 
-randomizacion de contrasena de la mesh
+Una mejora que facilitaría el proceso de instalación para usuarios menos experientes en temas de tecnología, es que en el momento de ligar una sesión de aplicación web con un dispositivo central no sea necesario introducir la dirección del segundo. Una solución práctica para esto, sería contar con un lector QR, y que los dispositivos centrales cuenten con un pegotín con la información necesaria.
 
-emisor rf pi zero que se conecte como un sonoff al pi zero con la bd
+Ya que hubieron problemas con Mycroft que no nos permitieron enfocarnos en el desarrollo de skills para el mismo, un objetivo a futuro es el de implementar más acciones por comando de voz. Además de esto se considera que se debe integrar el sistema con otros asistentes como Alexa y Cortana a pesar de que no se alinean con los objetivos de privacidad y utilización de proyectos open source.
 
-agregar otros tipos de sonoff
-
-mayor cantidad de skills para mycroft
+\section{Recomendaciones para futuros proyectos}

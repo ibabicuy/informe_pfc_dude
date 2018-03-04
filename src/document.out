@@ -62,7 +62,7 @@
 \BOOKMARK [2][-]{subsection.5.3.4}{Aportes a librer\355as de terceros}{section.5.3}% 62
 \BOOKMARK [0][-]{chapter.6}{Conclusiones}{}% 63
 \BOOKMARK [0][-]{chapter.7}{Recomendaciones}{}% 64
-\BOOKMARK [0][-]{section*.51}{Anexos}{}% 65
+\BOOKMARK [0][-]{section*.52}{Anexos}{}% 65
 \BOOKMARK [0][-]{chapter.Anexo.I}{Entregables}{}% 66
 \BOOKMARK [1][-]{section.Anexo.I.1}{Justificaci\363n de avance de 50\045}{chapter.Anexo.I}% 67
 \BOOKMARK [0][-]{chapter.Anexo.II}{C\363digo Fuente}{}% 68
@@ -70,13 +70,12 @@
 \BOOKMARK [2][-]{subsection.Anexo.II.1.1}{main.cpp}{section.Anexo.II.1}% 70
 \BOOKMARK [2][-]{subsection.Anexo.II.1.2}{credentials.h.j2}{section.Anexo.II.1}% 71
 \BOOKMARK [2][-]{subsection.Anexo.II.1.3}{platformio.ini}{section.Anexo.II.1}% 72
-\BOOKMARK [2][-]{subsection.Anexo.II.1.4}{ESP8266MQTTMesh.cpp}{section.Anexo.II.1}% 73
-\BOOKMARK [1][-]{section.Anexo.II.2}{Raspberry Pi}{chapter.Anexo.II}% 74
-\BOOKMARK [2][-]{subsection.Anexo.II.2.1}{mosquitto.conf}{section.Anexo.II.2}% 75
-\BOOKMARK [2][-]{subsection.Anexo.II.2.2}{api.py}{section.Anexo.II.2}% 76
-\BOOKMARK [2][-]{subsection.Anexo.II.2.3}{mongo\137db\137utils.py}{section.Anexo.II.2}% 77
-\BOOKMARK [2][-]{subsection.Anexo.II.2.4}{device\137template.json}{section.Anexo.II.2}% 78
-\BOOKMARK [1][-]{section.Anexo.II.3}{Aplicaci\363n Web}{chapter.Anexo.II}% 79
-\BOOKMARK [2][-]{subsection.Anexo.II.3.1}{index.js}{section.Anexo.II.3}% 80
-\BOOKMARK [2][-]{subsection.Anexo.II.3.2}{App.js}{section.Anexo.II.3}% 81
-\BOOKMARK [2][-]{subsection.Anexo.II.3.3}{LightControlConsole.js}{section.Anexo.II.3}% 82
+\BOOKMARK [1][-]{section.Anexo.II.2}{Raspberry Pi}{chapter.Anexo.II}% 73
+\BOOKMARK [2][-]{subsection.Anexo.II.2.1}{mosquitto.conf}{section.Anexo.II.2}% 74
+\BOOKMARK [2][-]{subsection.Anexo.II.2.2}{api.py}{section.Anexo.II.2}% 75
+\BOOKMARK [2][-]{subsection.Anexo.II.2.3}{mongo\137db\137utils.py}{section.Anexo.II.2}% 76
+\BOOKMARK [2][-]{subsection.Anexo.II.2.4}{device\137template.json}{section.Anexo.II.2}% 77
+\BOOKMARK [1][-]{section.Anexo.II.3}{Aplicaci\363n Web}{chapter.Anexo.II}% 78
+\BOOKMARK [2][-]{subsection.Anexo.II.3.1}{index.js}{section.Anexo.II.3}% 79
+\BOOKMARK [2][-]{subsection.Anexo.II.3.2}{App.js}{section.Anexo.II.3}% 80
+\BOOKMARK [2][-]{subsection.Anexo.II.3.3}{LightControlConsole.js}{section.Anexo.II.3}% 81

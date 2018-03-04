@@ -390,7 +390,7 @@ Luego se debe conectar al adaptador USB/Serial para poder subir el firmware desd
 \caption{\textit{Sonoff modificado.}}
 \end{figure}
 
-\subparagraph{Adaptación de interruptores analógicos}
+\subparagraph{Adaptación de interruptores analógicos}\mbox{}\\
 
 Debido a que se busca la mayor comodidad del lado del usuario y se intenta que la integración del sistema no conlleve a limitaciones, se configuraron los dispositivos Sonoff para poder ser controlados por interruptores analógicos. Ya sea del tipo utilizado comunmente en instalaciones eléctricas como interruptores digitales.
 Esto permitirá que el usuario utilizar tanto los medios usuales como las interfaces desarrolladas para interactuar con el sistema. Esto se logra conectando el interruptor entre el \lstinline[columns=fixed]{pin GPIO14} del Sonoff y tierra. logrando asi una interacción lógica con el relay interno.
@@ -463,7 +463,7 @@ if(sTopic == "Power"){//Relay HIGH to turn on
 
 \paragraph{Análisis de Código}
 
-\subparagraph{Librería FS}~\qref{sec-SPIFFS}
+\subparagraph{Librería FS}~\qref{sec-SPIFFS}\mbox{}\\
 
 Esta librería es usada por la librería \lstinline[columns=fixed]{ESP8266MQTTMesh}~\qref{anexo-esp8266mqttmesh} y también en el código que se realizó. Para lo primero que se utilizó como se puede ver a continuación,  es para leer de los \lstinline[columns=fixed]{SPIFFS} y así ver si existe una variable llamada \lstinline[columns=fixed]{mqtt_server} donde se almacena la IP del broker MQTT. Si no encuentra este archivo se conecta a  la red MQTT con la IP por default que tiene el broker en el archivo \lstinline[columns=fixed]{credentials.h}.
 
@@ -523,8 +523,7 @@ boolean bOFFExists = check_if_power_OFF_Exists();
   }
 \end{lstlisting}
 
-\subparagraph{Librería Bounce2}
-%
+\subparagraph{Librería Bounce2}\mbox{}\\
 Esta es una librería es de Arduino que sirve para cubrirse de los problemas típicos de rebotes asociados a la utilización de botones en el hardware. Se setea el pin asociado al botón como una entrada pull up de la siguiente manera:
 
 \begin{lstlisting}[language=C]
@@ -553,8 +552,8 @@ int value = debouncer.read();
 
 Esto se usa para ver si el usuario aprieta el botón más de 2 segundos, si esto pasa es porque se quiere entrar en el modo de configuración del Sonoff.
 
-\subparagraph{Librería ESP8266MQTTMesh}
-%
+\subparagraph{Librería ESP8266MQTTMesh}\mbox{}\\
+
 Esta librería es la base del proyecto. La misma se encarga de setear una \lstinline[columns=fixed]{IP} única para cada nodo de la red. Hace esto basándose en una propiedad que tiene el broker mosquitto que consiste en que cada vez que un dispositivo se suscribe a él. Este publica la bssid de todos los nodos que se han conectado. La bssid se crea en base a la \lstinline[columns=fixed]{MAC} del dispositivo que se suscribió con un número identificador de la siguiente forma: 
 
 \begin{lstlisting}[language=bash]
@@ -633,8 +632,7 @@ El comportamiento del nodo es escuchar los mensajes que le llegan desde el broke
 
 El protocolo que usa un nodo para mandarle mensajes a otro es \lstinline[columns=fixed]{TCP/IP}. Se manda el topic y mensaje en el payload del paquete.~\qref{esp8266mqttmeshissue}
 
-\subparagraph{Librería WiFiManager}
-%
+\subparagraph{Librería WiFiManager}\mbox{}\\
 Esta librería fue usada para recibir los datos de configuración inicial de \lstinline[columns=fixed]{SSID} y contraseña de la red MQTT del RPi de forma transparente para el usuario.La forma en la que se logra esto es al almacenar esos datos en el dispositivo del usuario. Cuando se configura por primera vez un dispositivo, se mandan en formato \lstinline[columns=fixed]{JSON} al mismo. 
 
 Lo primero que hace la librería cuando se llama dentro del Sonoff es levantar una red Wifi llamada \lstinline[columns=fixed]{AutoConnectAP} para que el usuario se conecte a la misma. Se implementó que solo se llame a la librería cuando no se tiene registro en los \lstinline[columns=fixed]{SPIFF} de que hubo una conexión a la red \lstinline[columns=fixed]{MQTT}.
@@ -679,7 +677,7 @@ Cuando le llega ese AJAX al dispositivo, verifica si la \lstinline[columns=fixed
 
 
 
-\subparagraph{Acciones Programadas}
+\subparagraph{Acciones Programadas}\mbox{}\\
 
 Se eligió la opción de crear crons a la hora de realizar el scheduler. Se tomó esta decisión por dos motivos: 
 \begin{itemize}
@@ -838,13 +836,11 @@ def delete_group_crons(groupId):
         delete_crons(str(device["_id"]))
 \end{lstlisting}
 
-\subparagraph{credentials.h}
-%
+\subparagraph{credentials.h}\mbox{}\\
 Este archivo contiene información sensible para la implementación del sistema (contraseñas y configuraciones de seguridad). Por lo que el mismo no se incluye en el informe ni está versionado en el repositorio, en cambio se brinda un template del mismo, el cual indica qué información es necesaria para el funcionamiento de los scripts.~\qref{anexo-credentials}
 
 
-\subparagraph{main.cpp} ~\qref{anexo-esp-main}
-%
+\subparagraph{main.cpp} ~\qref{anexo-esp-main}\mbox{}\\
 En este script hay muchos flujos lógicos mezclados, por lo que se mencionarán ordenados según su nivel de importancia en un dispositivo que es encendido por primera vez.
 
 \begin{itemize}
@@ -1019,7 +1015,7 @@ En la figura~\qref{fig:pag-prin-prov} se puede observar los botones para prender
 El código de la misma se puede observar bajo el anexo~\qref{anexo-app-web}
 
 
-\paragraph{Aplicación Web y Móvil:}\\
+\paragraph{Aplicación Web y Móvil:}\
 
 Para el desarrollo final se utilizaron las herramientas y librerías \lstinline[columns=fixed]{Auth0}~\cite{Auth0}, \lstinline[columns=fixed]{Phonegap}~\cite{Phonegap} y \lstinline[columns=fixed]{Android Studio}~\cite{AndroidStudio}.
 
@@ -1081,7 +1077,7 @@ Antes de comenzar el desarrollo el código de la aplicación web, se realizó un
 Para el desarrollo de la aplicación se decidió adquirir un template para no tener que invertir tiempo en la parte estética de la aplicación. Para la elección del mismo se tuvo en cuenta las librerías que utilizan y la adaptabilidad a versiones móviles.
 El tema elegido fué MegaMobile de \lstinline[columns=fixed]{Enabled}~\cite{Enabled}, debido a su interfaz vistosa y el estilo de las barras laterales y botones, los cuales se adecuaban a las pantallas diseñadas en Balsamic.
 
-\subparagraph{Librería jquery-cron:}\\
+\subparagraph{Librería jquery-cron:}\mbox{}\\
 Debido a la utilización de cron del lado del servidor, es necesario traducir la hora, día, etc a la que el usuario quiere realizar el apagado y prendido de los dispositivos o de los grupos a el formato de cron. Para esto se utilizó una librería llamada \lstinline[columns=fixed]{jquery-cron} que simplifica esta tarea. La misma consiste en una interfaz muy simple, como se ve a continuación, que cambia el \lstinline[columns=fixed]{String} del cron generado dependiendo de lo que el usuario ingrese.
 A su vez, \lstinline[columns=fixed]{jquery-cron} es complementada por \lstinline[columns=fixed]{jquery-gentleSelect} que decora los bordes de los selectores.
 
@@ -1128,7 +1124,7 @@ $('#selector_scheduler').cron({
 \lstinline[columns=fixed]{Initial} es el valor inicial que toma el scheduler. Onchange toma una función para ejecutar cuando el usuario selecciona un nuevo valor en alguno de los selectores. Lo que hace la función es traducir lo que el usuario eligió y setearlo en el div de texto. \lstinline[columns=fixed]{UseGentleSelect} se pone en true para habilitar el uso de la librería \lstinline[columns=fixed]{jquery-gentleSelect}.
 
 
-\subparagraph{Interfaz móvil y web}\mbox{}\\
+\subparagraph{Interfaz móvil y web}\mbox{}\mbox{}\\
 Cuando el usuario abre por primera vez la aplicación, solo tiene la posibilidad de iniciar sesión. Esto se realiza mediante el servicio autenticación \lstinline[columns=fixed]{Auth0}. Si no se cuenta con un token de autorización no expirado, la aplicación requerirá que el usuario se identifique.
 
 \begin{figure}[H]
@@ -1210,7 +1206,7 @@ Al seleccionar \lstinline[columns=fixed]{Acciones programadas}, \lstinline[colum
 \caption{\textit{Vistas de barra lateral.}}
 \end{figure}
 
-\subparagraph{Funciones del sistema}\mbox{}\\
+\subparagraph{Funciones del sistema}\mbox{}\mbox{}\\
 
 \textbf{Mis dispositivos}\\
 Vista que permite modificar el estado de un dispositivo previamente agregado, la lista información de dispositivos es obtenida desde el Raspberry. se muestra un ícono de una lámpara apagada o prendida dependiendo del estado actual del dispositivo. Al presionar el botón con la bombilla se envía la orden al dispositivo central, quien publica la orden y cambia el estado en la base de datos.
@@ -1325,7 +1321,7 @@ En caso de haber un error de conexión con el flask, el usuario verá una pantal
   \label{fig:app-movil-error}
 \end{figure}
 
-\subparagraph{Hosting de aplicación web}\mbox{}\\
+\subparagraph{Hosting de aplicación web}\mbox{}\mbox{}\\
 Para que la aplicación sea accesible y su mantenimiento no sea una sobrecarga, se decidieron utilizar \lstinline[columns=fixed]{AWS} (Amazon Web Services) donde se levantó una máquina virtual con \lstinline[columns=fixed]{EC2} que sirve un \lstinline[columns=fixed]{Apache HTTP Server}.
 
 \textbf{Amazon EC2}\\

@@ -58,49 +58,51 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.8}{\ignorespaces \textit {Conexion de interruptores con Sonoff.}\relax }}{48}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces \textit {Vista de p\IeC {\'a}gina principal provisoria.}\relax }}{66}{figure.caption.28}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces \textit {Vista de p\IeC {\'a}gina principal provisoria.}\relax }}{67}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces \textit {Flujo de autenticaci\IeC {\'o}n con Auth0.}\relax }}{67}{figure.caption.29}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces \textit {Flujo de autenticaci\IeC {\'o}n con Auth0.}\relax }}{68}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces \textit {P\IeC {\'a}gina de inicio.}\relax }}{69}{figure.caption.30}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces \textit {Selectores jquery-cron.}\relax }}{71}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces \textit {D.U.D.E. Auth0 Log In}\relax }}{69}{figure.caption.31}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces \textit {P\IeC {\'a}gina de inicio.}\relax }}{72}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces \textit {P\IeC {\'a}gina de configuraci\IeC {\'o}n de dispositivo central.}\relax }}{70}{figure.caption.32}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces \textit {D.U.D.E. Auth0 Log In}\relax }}{73}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces \textit {P\IeC {\'a}gina de inicio con sesi\IeC {\'o}n iniciada.}\relax }}{70}{figure.caption.33}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces \textit {P\IeC {\'a}gina de configuraci\IeC {\'o}n de dispositivo central.}\relax }}{73}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces \textit {Vistas de barra lateral.}\relax }}{71}{figure.caption.34}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces \textit {P\IeC {\'a}gina de inicio con sesi\IeC {\'o}n iniciada.}\relax }}{74}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces \textit {Cambiar estado de dispositivo.}\relax }}{72}{figure.caption.35}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces \textit {Vistas de barra lateral.}\relax }}{75}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces \textit {Cambiar estado de grupo.}\relax }}{73}{figure.caption.36}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces \textit {Cambiar estado de dispositivo.}\relax }}{76}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.18}{\ignorespaces \textit {Vistas de selecci\IeC {\'o}n.}\relax }}{73}{figure.caption.37}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces \textit {Cambiar estado de grupo.}\relax }}{76}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.19}{\ignorespaces \textit {Agregar acci\IeC {\'o}n programada.}\relax }}{74}{figure.caption.38}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces \textit {Vistas de selecci\IeC {\'o}n.}\relax }}{77}{figure.caption.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.20}{\ignorespaces \textit {Agregar dispositivo.}\relax }}{75}{figure.caption.39}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces \textit {Agregar acci\IeC {\'o}n programada.}\relax }}{78}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.21}{\ignorespaces \textit {Agregar grupo.}\relax }}{75}{figure.caption.40}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces \textit {Agregar dispositivo.}\relax }}{78}{figure.caption.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.22}{\ignorespaces \textit {Editar dispositivo.}\relax }}{76}{figure.caption.41}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces \textit {Agregar grupo.}\relax }}{79}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.23}{\ignorespaces \textit {Editar grupo.}\relax }}{77}{figure.caption.42}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces \textit {Editar dispositivo.}\relax }}{80}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.24}{\ignorespaces \textit {Pantalla de error.}\relax }}{77}{figure.caption.43}
+\contentsline {figure}{\numberline {5.24}{\ignorespaces \textit {Editar grupo.}\relax }}{80}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.25}{\ignorespaces \textit {Elecci\IeC {\'o}n de SO.}\relax }}{78}{figure.caption.44}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces \textit {Pantalla de error.}\relax }}{81}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.26}{\ignorespaces \textit {Elecci\IeC {\'o}n de m\IeC {\'a}quina virtual.}\relax }}{78}{figure.caption.45}
+\contentsline {figure}{\numberline {5.26}{\ignorespaces \textit {Elecci\IeC {\'o}n de SO.}\relax }}{81}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.27}{\ignorespaces \textit {Elecci\IeC {\'o}n de grupo de seguridad.}\relax }}{79}{figure.caption.46}
+\contentsline {figure}{\numberline {5.27}{\ignorespaces \textit {Elecci\IeC {\'o}n de m\IeC {\'a}quina virtual.}\relax }}{82}{figure.caption.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.28}{\ignorespaces \textit {Creaci\IeC {\'o}n de grupo de seguridad.}\relax }}{79}{figure.caption.47}
+\contentsline {figure}{\numberline {5.28}{\ignorespaces \textit {Elecci\IeC {\'o}n de grupo de seguridad.}\relax }}{82}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.29}{\ignorespaces \textit {Elecci\IeC {\'o}n de llave.}\relax }}{80}{figure.caption.48}
+\contentsline {figure}{\numberline {5.29}{\ignorespaces \textit {Creaci\IeC {\'o}n de grupo de seguridad.}\relax }}{82}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.30}{\ignorespaces \textit {Panel informativo.}\relax }}{80}{figure.caption.49}
+\contentsline {figure}{\numberline {5.30}{\ignorespaces \textit {Elecci\IeC {\'o}n de llave.}\relax }}{83}{figure.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.31}{\ignorespaces \textit {Panel informativo.}\relax }}{83}{figure.caption.50}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
