@@ -1,0 +1,139 @@
+\documentclass[a4paper,11pt,twoside,openright,hidelinks]{report}
+
+\usepackage{geometry}
+	\geometry{
+	a4paper,
+	left=3.0cm,
+	top=3.0cm,
+	right=2.5cm,
+	bottom=2.5cm
+}
+\usepackage[utf8]{inputenc} % Allows using accents instead of \'.
+\usepackage[spanish]{babel} % Spanish as default language.
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz} % For drawing graphics.
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{courier} % Use Courier New as monospace font.
+\usepackage{palatino} % Use the Palatino font.
+\usepackage{emptypage}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{paralist}
+\usepackage{fancyhdr}
+\usepackage{tocloft} % ToC styling.
+\usepackage[backend=biber]{biblatex}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{afterpage}
+\usepackage{csquotes}
+\usepackage[titletoc,toc,page]{appendix}
+\usepackage{colortbl} 
+\usepackage{xcolor} 
+\usepackage{xfrac}
+\usepackage{pdfpages}
+\usepackage{lipsum}
+
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+% Add new column types for tabularx: X and Y.
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\usepackage{ragged2e}  % For '\RaggedRight' macro (allows hyphenation).
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\renewcommand\theadfont{\bfseries}
+
+\renewcommand\thesubfigure{\alph{subfigure})}
+\makeatletter
+\renewcommand\p@subfigure{[\thefigure~]}
+\makeatother
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\newcommand{\qref}[1]{[\ref{#1}]}
+
+% Header setup.
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\baselinestretch}{1.5}
+\fancyhf{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+
+\addbibresource{bibliography.bib}
+
+\setlength{\parskip}{\baselineskip} % Skip a line between paragarphs.
+
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}}
+
+\lstset{
+  language=Python,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray},
+  basicstyle=\small\ttfamily,
+  showstringspaces=false,
+  breaklines=true
+}
+
+\renewcommand{\abstractname}{Resumen} % Nombre de la sección del abstract.
+
+\newcommand{\annexname}{Anexo}
+\makeatletter % treat @ as a letter instead of a control word.
+\newcommand\annex{\par
+\setcounter{chapter}{0}
+\setcounter{section}{0}
+\renewcommand\appendixname{Anexo}
+\renewcommand\appendixpagename{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\gdef\@chapapp{\annexname}
+\gdef\thechapter{\@Roman\c@chapter}
+\renewcommand{\theHchapter}{\annexname.\thechapter}
+\addappheadtotoc
+}
+\makeatother
+
+\begin{document}
+\pagenumbering{gobble}
+\include{0-portada}
+\tableofcontents
+\listoffigures
+\listoftables
+\clearpage
+\pagenumbering{arabic}
+\include{1-resumen-ejecutivo}
+\include{2-introduccion}
+\include{3-marco-teorico}
+\include{4-marco-metodologico}
+\include{5-estructura-del-contenido}
+\include{6-conclusiones}
+\include{7-recomendaciones}
+\printbibliography
+\annex
+\include{8-apendice}
+
+
+
+\end{document}

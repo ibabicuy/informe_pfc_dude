@@ -1,0 +1,95 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {spanish}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Estructura del Contenido}{}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Arquitectura}{}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}M\IeC {\'o}dulos del Sistema}{}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.1}M\IeC {\'o}dulo MQTT Mesh}{}{subsection.1.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Componentes:}{}{subsection.1.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Descripci\IeC {\'o}n:}{}{figure.caption.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.2}M\IeC {\'o}dulo de Control}{}{subsection.1.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Componentes:}{}{subsection.1.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Descripci\IeC {\'o}n:}{}{figure.caption.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.3}M\IeC {\'o}dulo de interfaces de usuario}{}{subsection.1.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Aplicaci\IeC {\'o}n web}{}{subsection.1.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Componentes:}{}{subsection.1.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Descripci\IeC {\'o}n:}{}{figure.caption.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Asistente virtual}{}{figure.caption.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Componentes:}{}{figure.caption.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Descripci\IeC {\'o}n:}{}{figure.caption.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Desarrollo}{}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.1}M\IeC {\'o}dulo MQTT Mesh}{}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mosquitto broker:}{}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{persistence}{}{lstnumber.-3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{allow\_anonymous}{}{lstnumber.-3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Access Point:}{}{lstnumber.-8.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Dispositivos Sonoff}{}{lstnumber.-19.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Modificaciones f\IeC {\'\i }sicas y subida de firmware}{}{lstnumber.-19.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Adaptaci\IeC {\'o}n de interruptores anal\IeC {\'o}gicos}{}{figure.caption.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{An\IeC {\'a}lisis de C\IeC {\'o}digo}{}{lstnumber.-23.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Librer\IeC {\'\i }a FS}{}{lstnumber.-23.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Librer\IeC {\'\i }a Bounce2}{}{lstnumber.-25.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Librer\IeC {\'\i }a ESP8266MQTTMesh}{}{lstnumber.-29.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Librer\IeC {\'\i }a WiFiManager}{}{table.caption.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Acciones Programadas}{}{lstnumber.-35.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{credentials.h}{}{lstnumber.-51.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{main.cpp}{}{lstnumber.-51.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}M\IeC {\'o}dulo Controlador}{}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Setup del servidor Flask, MongoDB}{}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Desarrollo}{}{lstnumber.-56.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Configuraci\IeC {\'o}n de par\IeC {\'a}metros:}{}{lstnumber.-56.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Agregar dispositivos:}{}{lstnumber.-57.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Env\IeC {\'\i }o de \IeC {\'o}rdenes:}{}{lstnumber.-59.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.3}M\IeC {\'o}dulo de interfaces de usuario}{}{subsection.1.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Aplicaci\IeC {\'o}n web}{}{subsection.1.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Aplicaci\IeC {\'o}n provisoria:}{}{subsection.1.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Aplicaci\IeC {\'o}n Web y M\IeC {\'o}vil:}{}{figure.caption.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Interfaz m\IeC {\'o}vil y web}{}{lstnumber.-66.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subparagraph}{Funciones del sistema}{}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mycroft}{}{figure.caption.25}

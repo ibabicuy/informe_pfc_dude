@@ -1,0 +1,29 @@
+\chapter{Introducción}
+
+\section{Objetivo General}
+
+Se llevó a cabo un sistema de domótica de bajo costo utilizando tecnologías emergentes en el mundo de las TIC, haciendo foco en el área de IoT, y así adquirir experiencia tanto teórica como práctica en los componentes de hardware y software del state-of-the-art de esta área.
+
+\section{Objetivos Específicos}
+
+Se busca llevar a cabo un sistema de domótica modular, utilizando la mayor cantidad de código open source y hardware orientado al desarrollo. De esta manera se permite el mayor control y conocimiento del sistema, dejando la libertad de utilizar los protocolos que se encuentre más adecuados para cada módulo y de elegir los componentes de hardware que sea posible obtener, teniendo siempre como meta la obtención de un sistema adaptable y de bajo costo.
+
+\section{Descripción del Producto}
+
+El producto cuenta con un módulo central que expone servicios a distintas interfaces de usuario. Este módulo se encarga de formar la red de dispositivos de control, administrarlos y comunicarse con los mismos, tanto para consultar estados como enviar instrucciones. 
+Como se mencionó anteriormente, se obtuvo una arquitectura modular, la cual permite, además de mantener un orden en el desarrollo e investigación, la capacidad de adaptar los distintos componentes a servicios ya establecidos, ya sean de código abierto o de API's configurables. Un ejemplo de cada uno es Home Assistant~\cite{HomeAssistant} y Google Home~\cite{GoogleHome}.
+Estas adaptaciones quedaron fuera del alcance inicial de este proyecto, pero se desarrollaron interfaces propias, una en forma de aplicación web (fácilmente adaptable a aplicación móvil) y otra como asistente personal (específicamente se utilizó el asistente open source Mycroft~\cite{Mycroft}).
+
+\section{Necesidades satisfechas}
+El producto busca acercar a toda persona interesada en sistemas de automatización a la posibilidad de contar con un servicio de este tipo, ya sea en el hogar, oficinas o cualquier locación con acceso a Internet.
+Con esta implementación se aumenta tanto la comodidad del usuario como la eficiencia en el uso de los componentes eléctricos controlados por los interruptores inteligentes. Algunos de los casos de uso en los que esto se ve reflejado son:
+
+\section{Justificación de impacto}
+
+Se encontró carencia en el mercado actual, ya que se ha detectado una tendencia de reemplazo de componentes, y se busca con este desarrollo brindar la capacidad de adaptación de elementos que no pueden ser controlados remotamente.
+
+\section{Antecedentes tecnológicos}
+
+En la actualidad existen muchas soluciones para automatización de casas, su gran debilidad: la gran mayoría se enfoca en el cambio de los elementos a automatizar, es así en las luces Phillips~\cite{phillips-lighting} o su competencia con precios más económicos IKEA~\cite{ikea-lighting}. Existen también soluciones de adaptación de dispositivos, como el mismo dispositivo Sonoff, pero su código cerrado no deja realizarle modificaciones a la implementación. 
+Uno de los problemas a los que se enfrentan estos dispositivos es que el alcance de WiFi nunca cubre la totalidad del área habitada donde está instalado, algo que se busca solucionar con este sistema. Además de problemas técnicos, hemos notado un movimiento de concientización por parte de desarrolladores open source, los cuales se están esforzando para brindar opciones a los dispositivos de automatización de grandes empresas, las cuales utilizan datos obtenidos para sacar provecho de los mismos.
+
