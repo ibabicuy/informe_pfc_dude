@@ -425,6 +425,11 @@ Esto permite acceder a más funcionalidades específicas de los dispositivos mó
 Cron es un administrador de procesos que es utilizado en Unix. Se encarga de que estos procesos se corran a intervalos constantes de tiempo o a horas específicas ambos determinados por las personas que tengan permisos para crear o editar estos crones. Solo los usuarios que están en el archivo cron.allow son los que pueden crear crones en sus respectivos crontabs. 
 
 El archivo crontab contiene los comandos que se ejecutan, así como la hora o frecuencia con que se corren, como se puede ver a continuación:
+
+\begin{lstlisting}[language=bash]
+12 22 * * * curl -H "Authentication-Token: f1a8659701bbbc7196940761c1d55c3b9a25fb6569a863df"  -X POST -d '{"state":"0","device_id":"12395613"}' http://localhost:5000/set_led_state
+\end{lstlisting}
+
 Donde la estructura es la siguiente:
 
 \begin{lstlisting}[language=bash]
@@ -439,33 +444,29 @@ Donde la estructura es la siguiente:
 
 \section{Apache HTTP Server}
 
-Es un servidor web HTTP de código abierto que tiene más de 20 años de creación. Es extremadamente popular, siendo el servidor HTTP más usado y es altamente configurable.  Es multiplataforma, que abarca entre otras, a Unix. Al ser de código abierto y esté hace tanto tiempo en funcionamiento lo hace una opción confiable del punto de vista de la seguridad y que sea fácil conseguir ayuda al tener un problema. https://en.wikipedia.org/wiki/Apache_HTTP_Server.
+\lstinline[columns=fixed]{Apache}~\cite{Apache} es un servidor web HTTP de código abierto que tiene más de 20 años de creación. Es extremadamente popular, siendo el servidor HTTP más usado y es altamente configurable.  A su vez, es multiplataforma abarcando entre otras, a Unix. Al ser de código abierto y habiendo estado tanto tiempo en funcionamiento hace que sea una opción confiable del punto de vista de la seguridad y esto también hace que sea fácil conseguir ayuda al tener un problema.
 
-Los carpetas básicas donde se guarda la información de configuración son: sites-available, sites-enabled. Archivos básicos de configuración son: apache2.conf (nombre en Ubuntu), ports.conf.
+Los carpetas básicas donde se guarda la información de configuración son: \lstinline[columns=fixed]{sites-available}, \lstinline[columns=fixed]{sites-enabled}. Archivos básicos de configuración son: \lstinline[columns=fixed]{apache2.conf}  (nombre en Ubuntu), \lstinline[columns=fixed]{ports.conf}.
 
-En el archivo ports.conf se puede encontrar los puertos en los que escucha el servidor apache. Por defecto solo está habilitado el puerto 80. 
+En el archivo ports.conf se puede encontrar los puertos en los que escucha el servidor Apache. Por defecto solo está habilitado el puerto 80. 
 
-El archivo apache2.conf puede contener toda la configuración del sistema. Por un tema de modularidad y orden se acostumbra a diseminar la configuración en otros archivos.
+El archivo \lstinline[columns=fixed]{apache2.conf} puede contener toda la configuración del sistema. Por un tema de modularidad y orden se acostumbra a diseminar la configuración en otros archivos.
 
-La carpeta sites-available contiene archivos que definen los hosts virtuales del servidor. El  contenido de estos archivos son lo que direccionan el pedido del usuario cuando accede al servidor. Esto depende de cómo hace el llamado (URL, puerto, ruta) . 
+La carpeta \lstinline[columns=fixed]{sites-available} contiene archivos que definen los hosts virtuales del servidor. El  contenido de estos archivos son lo que direccionan el pedido del usuario cuando accede al servidor. Esto depende de cómo hace el llamado (URL, puerto, ruta). 
 
-La carpeta sites-enabled contiene los archivos disponibles de sites-available. Son los únicos que tiene en cuenta Apache.
+La carpeta \lstinline[columns=fixed]{sites-enabled} contiene los archivos disponibles de sites-available. Son los únicos que tiene en cuenta Apache.
 
-Finalmente, hay una carpeta que no es de configuración pero es de gran importancia. Esta es /var/www/html/ que es donde se ubica todo el código del servidor.
-
-fuente 
-https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
+Finalmente, hay una carpeta que no es de configuración pero es de gran importancia. Esta es \lstinline[columns=fixed]{/var/www/html/} que es donde se ubica todo el código del servidor.
 
 \section{Amazon EC2}
 
-Amazon Elastic Compute Cloud (Amazon EC2) es un servicio brindado por Amazon Web Services. Brindan un entorno virtualizado para trabajar en la nube. Se puede elegir de un conjunto de imágenes de máquinas virtualizadas con las cuales empezar  a trabajar. A su vez, se brinda la posibilidad de elegir las características de esa computadora como memoria, almacenamiento y capacidad de red de las instancias. A esto se le llama tipo de instancia. También, cuenta con un firewall virtual que se le aplica a una o varias de esas máquina virtuales. Se brinda una IP estática para ese equipo junto con un dominio. 
+\lstinline[columns=fixed]{Amazon EC2}~\cite{AmazonEC2}
 
-Al firewall virtual se lo llama Amazon EC2 Security Groups y al crear uno se le puede aplicar a varias instancias (computadoras virtuales). Se le puede añadir un conjunto de reglas para que sean respetadas en varias instancias. Por defecto, solo viene habilitado el SSH para que el usuario se pueda conectar al equipo.
+Amazon Elastic Compute Cloud (\lstinline[columns=fixed]{Amazon EC2}~\cite{AmazonEC2}) es un servicio brindado por Amazon Web Services. Es un entorno virtualizado para trabajar en la nube. Se puede elegir de un conjunto de imágenes de máquinas virtualizadas con las cuales empezar a trabajar. A su vez, se brinda la posibilidad de elegir las características de esa computadora como: memoria, almacenamiento y capacidad de red. A esto se le llama tipo de instancia. También, cuenta con un firewall virtual que se le aplica a una o varias de esas máquina virtuales. Se brinda una IP estática para ese equipo junto con un dominio. 
 
-Este servicio tiene un computadoras gratuitas por el primer año, con poco procesamiento, ram y red limitada. De esta forma, si se necesita un servidor con pocos requerimientos de procesamiento y red, se puede usar este de para virtualizar el contenido del mismo y no tener que preocuparse por la alimentación del servidor o por los elementos físicos del mismo como si se tuviera físicamente dentro del hogar o un datacenter.
+Al firewall virtual se lo llama Amazon EC2 Security Groups y al crear uno se lo puede aplicar a varias instancias (computadoras virtuales). A este firewall se le pueden añadir un conjunto de reglas para que empleadas por varias instancias. Por defecto, solo viene habilitado el puerto 22 para que el administrador se pueda conectar por SSH al equipo.
 
-https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/concepts.html
-
+Este servicio es ofrecido de forma gratuita por el primer año para computadoras con procesamiento, ram y red limitada. De esta forma, si se necesita un servidor con pocos requerimientos, se puede usar este servicio para virtualizar el contenido del mismo y no tener que preocuparse por la alimentación u otros elementos físicos del servidor.
 
 \section{Mycroft}
 Mycroft es el primer asistente virtual open source, y está diseñado para ser ejecutado en una computadora personal y hasta en un Raspberry Pi. este software open source está a total disposición para ser modificado, extendido o mejorado. 
