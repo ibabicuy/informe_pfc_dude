@@ -1278,6 +1278,52 @@ En caso de haber un error de conexión con el flask, el usuario verá una pantal
   \label{fig:app-movil-error}
 \end{figure}
 
+\subparagraph{Hosting de aplicación web}\mbox{}\\
+Para que la aplicación sea accesible y su mantenimiento no sea una sobrecarga, se decidieron utilizar \lstinline[columns=fixed]{AWS} (Amazon Web Services) donde se levantó una máquina virtual con \lstinline[columns=fixed]{EC2} que sirve un \lstinline[columns=fixed]{Apache HTTP Server}.
+
+\textbf{Amazon EC2}\\
+Para crear una máquina virtual, primero se necesita elegir que sistema operativo. En este proyecto, como solo se debe mostrar un prototipo, se eligió una de las opciones gratis que brinda AWS con Ubuntu de arranque. Se optó por Ubuntu dado que se tenía experiencia instalado servidores Apache ahí. 
+
+Luego de elegir el sistema operativo, hay que elegir cuanta \lstinline[columns=fixed]{RAM}, procesador, característica de red se quiere tener. En este caso, solo había una opción gratis  y que a su vez tenía todo lo que se necesitaba para el servidor. Por lo que se eligió esa.
+
+Finalmente se le debe asignar un grupo de seguridad a esa instancia como se ve a continuación.
+
+Por lo tanto, antes de esto se creó un grupo de seguridad acorde para este servicio. Se habilitó el ping tanto como las conexiones \lstinline[columns=fixed]{TCP} en el puerto \lstinline[columns=fixed]{80}. El \lstinline[columns=fixed]{SSH} en el puerto \lstinline[columns=fixed]{22} ya estaba habilitado previamente. Todo el tráfico saliente ya está habilitado por defecto.
+
+Luego de crear la instancia, \lstinline[columns=fixed]{AWS} da al usuario una llave para que pueda conectarse con el servidor en cuestión. La llave se puede elegir de otra ya existente o crear una nueva. El usuario guarda su llave privada, mientras que la instancia que acaba de crear se queda con la llave pública.
+
+Terminado esto queda la máquina virtual corriendo. Hay un panel web que permite ver el estado de la misma, su IP su DNS público como se ve a continuación.
+
+\textbf{Apache HTTP Server}\\
+Primero se instala Apache mediante el gestor de paquetes de Ubuntu de la siguiente manera: 
+apt-get install apache2
+Luego, todo el código generado por phonegap para la plataforma de navegador se puso en la carpeta \lstinline[columns=fixed]{/var/www/html/dude}. Asimismo, se necesita que todos los llamados que van al puerto 80 sea atendido por el servidor Apache y este llame a los archivos en \lstinline[columns=fixed]{/var/www/html/dude}. 
+
+Para lograr esto en el archivo ports.conf se tiene que configurar que apache escuche en el puerto \lstinline[columns=fixed]{80} (lo cual se hace por defecto) de la siguiente manera:
+
+Listen 80
+
+Una vez que se escucha lo que llega a ese puerto, hay que direccionar el tráfico a la carpeta \lstinline[columns=fixed]{/var/www/html/dude}. Para esto, en \lstinline[columns=fixed]{sites-available} hay que modificar el archivo por defecto de servidor para que el tráfico que llega a ese puerto se direccione a \lstinline[columns=fixed]{/var/www/html/dude} y no a \lstinline[columns=fixed]{/var/www/html}, como hace por defecto. El archivo por defecto modificado es \lstinline[columns=fixed]{000-default.conf}.
+
+\begin{lstlisting}[language=bash]
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html/dude
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+\end{lstlisting}
+
+Finalmente, hay que habilitar ese archivo y reiniciar el servidor apache 
+
+\begin{lstlisting}[language=bash]
+sudo a2ensite 000-default.conf
+sudo service apache2 restart
+\end{lstlisting}
+
+
+
 \subsubsection{Mycroft}
 
 Se desarrollaron skills para el asistente virtual \lstinline[columns=fixed]{Mycroft}~\cite{Mycroft} como una de las interfaces que permitirán al usuario interactuar con el sistema, pero a diferencia de las aplicaciones móvil y web, esta interfaz tiene funcionalidades más básicas, ya que la interfaz por vos no resulta cómoda para acciones complejas, como agregar dispositivos o modificar los mismos.
