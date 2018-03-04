@@ -24,7 +24,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Justificaci\IeC {\'o}n de impacto}{4}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Antecedentes tecnol\IeC {\'o}gicos}{4}{section.2.6}
+\contentsline {section}{\numberline {2.6}Antecedentes tecnol\IeC {\'o}gicos}{5}{section.2.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Marco Te\IeC {\'o}rico}{7}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -223,6 +223,10 @@
 \contentsline {chapter}{\numberline {6}Conclusiones}{89}{chapter.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}Recomendaciones}{91}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Cosas a mejorar}{91}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Recomendaciones para futuros proyectos}{92}{section.7.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Anexos}{95}{section*.52}
 \defcounter {refsection}{0}\relax 
