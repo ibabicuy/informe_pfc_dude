@@ -1019,7 +1019,7 @@ En la figura~\qref{fig:pag-prin-prov} se puede observar los botones para prender
 El código de la misma se puede observar bajo el anexo~\qref{anexo-app-web}
 
 
-\paragraph{Aplicación Web y Móvil:}
+\paragraph{Aplicación Web y Móvil:}\\
 
 Para el desarrollo final se utilizaron las herramientas y librerías \lstinline[columns=fixed]{Auth0}~\cite{Auth0}, \lstinline[columns=fixed]{Phonegap}~\cite{Phonegap} y \lstinline[columns=fixed]{Android Studio}~\cite{AndroidStudio}.
 
@@ -1080,6 +1080,53 @@ Antes de comenzar el desarrollo el código de la aplicación web, se realizó un
 
 Para el desarrollo de la aplicación se decidió adquirir un template para no tener que invertir tiempo en la parte estética de la aplicación. Para la elección del mismo se tuvo en cuenta las librerías que utilizan y la adaptabilidad a versiones móviles.
 El tema elegido fué MegaMobile de \lstinline[columns=fixed]{Enabled}~\cite{Enabled}, debido a su interfaz vistosa y el estilo de las barras laterales y botones, los cuales se adecuaban a las pantallas diseñadas en Balsamic.
+
+\subparagraph{Librería jquery-cron:}\\
+Debido a la utilización de cron del lado del servidor, es necesario traducir la hora, día, etc a la que el usuario quiere realizar el apagado y prendido de los dispositivos o de los grupos a el formato de cron. Para esto se utilizó una librería llamada \lstinline[columns=fixed]{jquery-cron} que simplifica esta tarea. La misma consiste en una interfaz muy simple, como se ve a continuación, que cambia el \lstinline[columns=fixed]{String} del cron generado dependiendo de lo que el usuario ingrese.
+A su vez, \lstinline[columns=fixed]{jquery-cron} es complementada por \lstinline[columns=fixed]{jquery-gentleSelect} que decora los bordes de los selectores.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/jquery-cron1}
+  \includegraphics[width=\textwidth, keepaspectratio]{images/jquery-cron2}
+  \includegraphics[width=\textwidth, keepaspectratio]{images/jquery-cron3}
+  \includegraphics[width=\textwidth, keepaspectratio]{images/jquery-cron4}
+  \includegraphics[width=\textwidth, keepaspectratio]{images/jquery-cron5}
+  \includegraphics[width=\textwidth, keepaspectratio]{images/jquery-cron6}
+  \caption{\textit{Selectores jquery-cron.}}
+  \label{fig:jquery-cron-selectors}
+\end{figure}
+
+Se adaptó esta librería creando un fork del proyecto para que todos los nombres de las opciones y textos queden en español, esta modificación quedó disponible para la utilización de la comunidad.
+Para usar esta librería alcanza con tener dos divs, uno para el scheduler y otro para texto resultante. El margen izquierdo del div de texto es negativo para que no aparezca en la pantalla, dado que el cron debe ser transparente para el usuario.
+
+\begin{lstlisting}[language=python]
+<div id="selector_scheduler"></div>
+
+<div class='example-text' style="margin: 0px 0px 0px -40%;" id='example1-val'></div>
+\end{lstlisting}
+
+Se debe cargar la librería antes de usarla, junto con \lstinline[columns=fixed]{jquery-gentleSelect}.
+
+\begin{lstlisting}[language=python]
+<script type="text/javascript" src="js/jquery-cron.js"></script>
+<script type="text/javascript" src="js/jquery-gentleSelect.js"></script>
+\end{lstlisting}
+
+Luego, se crea la interfaz:
+
+\begin{lstlisting}[language=python]
+$('#selector_scheduler').cron({
+          initial: "42 3 * * 5",
+          onChange: function() {
+              $('#example1-val').text($(this).cron("value"))
+          },
+          useGentleSelect: true
+      })
+\end{lstlisting}
+
+\lstinline[columns=fixed]{Initial} es el valor inicial que toma el scheduler. Onchange toma una función para ejecutar cuando el usuario selecciona un nuevo valor en alguno de los selectores. Lo que hace la función es traducir lo que el usuario eligió y setearlo en el div de texto. \lstinline[columns=fixed]{UseGentleSelect} se pone en true para habilitar el uso de la librería \lstinline[columns=fixed]{jquery-gentleSelect}.
+
 
 \subparagraph{Interfaz móvil y web}\mbox{}\\
 Cuando el usuario abre por primera vez la aplicación, solo tiene la posibilidad de iniciar sesión. Esto se realiza mediante el servicio autenticación \lstinline[columns=fixed]{Auth0}. Si no se cuenta con un token de autorización no expirado, la aplicación requerirá que el usuario se identifique.
@@ -1284,19 +1331,63 @@ Para que la aplicación sea accesible y su mantenimiento no sea una sobrecarga, 
 \textbf{Amazon EC2}\\
 Para crear una máquina virtual, primero se necesita elegir que sistema operativo. En este proyecto, como solo se debe mostrar un prototipo, se eligió una de las opciones gratis que brinda AWS con Ubuntu de arranque. Se optó por Ubuntu dado que se tenía experiencia instalado servidores Apache ahí. 
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/AWS1}
+  \caption{\textit{Elección de SO.}}
+  \label{fig:AWS1}
+\end{figure}
+
 Luego de elegir el sistema operativo, hay que elegir cuanta \lstinline[columns=fixed]{RAM}, procesador, característica de red se quiere tener. En este caso, solo había una opción gratis  y que a su vez tenía todo lo que se necesitaba para el servidor. Por lo que se eligió esa.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/AWS2}
+  \caption{\textit{Elección de máquina virtual.}}
+  \label{fig:AWS2}
+\end{figure}
 
 Finalmente se le debe asignar un grupo de seguridad a esa instancia como se ve a continuación.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/AWS3}
+  \caption{\textit{Elección de grupo de seguridad.}}
+  \label{fig:AWS3}
+\end{figure}
+
 Por lo tanto, antes de esto se creó un grupo de seguridad acorde para este servicio. Se habilitó el ping tanto como las conexiones \lstinline[columns=fixed]{TCP} en el puerto \lstinline[columns=fixed]{80}. El \lstinline[columns=fixed]{SSH} en el puerto \lstinline[columns=fixed]{22} ya estaba habilitado previamente. Todo el tráfico saliente ya está habilitado por defecto.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/AWS4}
+  \caption{\textit{Creación de grupo de seguridad.}}
+  \label{fig:AWS4}
+\end{figure}
 
 Luego de crear la instancia, \lstinline[columns=fixed]{AWS} da al usuario una llave para que pueda conectarse con el servidor en cuestión. La llave se puede elegir de otra ya existente o crear una nueva. El usuario guarda su llave privada, mientras que la instancia que acaba de crear se queda con la llave pública.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/AWS5}
+  \caption{\textit{Elección de llave.}}
+  \label{fig:AWS5}
+\end{figure}
+
 Terminado esto queda la máquina virtual corriendo. Hay un panel web que permite ver el estado de la misma, su IP su DNS público como se ve a continuación.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/AWS6}
+  \caption{\textit{Panel informativo.}}
+  \label{fig:AWS6}
+\end{figure}
 
 \textbf{Apache HTTP Server}\\
 Primero se instala Apache mediante el gestor de paquetes de Ubuntu de la siguiente manera: 
+\begin{lstlisting}[language=bash]
 apt-get install apache2
+\end{lstlisting}
 Luego, todo el código generado por phonegap para la plataforma de navegador se puso en la carpeta \lstinline[columns=fixed]{/var/www/html/dude}. Asimismo, se necesita que todos los llamados que van al puerto 80 sea atendido por el servidor Apache y este llame a los archivos en \lstinline[columns=fixed]{/var/www/html/dude}. 
 
 Para lograr esto en el archivo ports.conf se tiene que configurar que apache escuche en el puerto \lstinline[columns=fixed]{80} (lo cual se hace por defecto) de la siguiente manera:
