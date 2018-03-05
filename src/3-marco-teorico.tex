@@ -14,13 +14,13 @@ En la figura~\qref{fig:dude-arq} se pueden apreciar un primer acercamiento a los
 El usuario interactúa con el servidor Flask a través de alguna de las interfaces brindadas. Luego el servidor se encarga de interactuar con los interruptores inteligentes según corresponda.
 
 \section{Git}
-Para el desarrollo de código grupal, es necesario utilizar un controlador de versiones del mismo, ya que es posible que varios desarrolladores quieran efectuar cambios en el mismo archivo, perdiéndose o dañándose parte del código.
+Para el desarrollo de código donde varias personas modifican el código en simultáneo, es necesario utilizar un controlador de versiones del mismo, ya que es posible que varios desarrolladores quieran efectuar cambios en el mismo archivo, perdiéndose o dañándose parte del código.
 Esta herramienta fue diseñada por Linus Torvalds, conocido por iniciar y mantener el desarrollo del kernel de Linux, y en la actualidad es ampliamente utilizada en proyectos con gran extensión de código y varios desarrolladores.
 Algunos conceptos básicos a manejar del mismo son:
 
 \begin{itemize}
 
-\item Branch: es una versión paralela a un repositorio, contenida en el mismo pero permite realizar cambios sin modificar la versión "oficial", una vez terminados y testeados los cambios se pueden aplicar a la versión utilizada por los demás desarrolladores.
+\item Branch: es una versión paralela a un repositorio, contenida en el mismo pero permite realizar cambios sin modificar la versión principal, una vez terminados y testeados los cambios se pueden aplicar a la versión utilizada por los demás desarrolladores.
 
 \item Clone: es una copia del repositorio que se encuentra alojada en el computador del desarrollador en vez de en el servidor donde se guarda el repositorio.
 
@@ -38,22 +38,23 @@ Para este proyecto se utilizó una estrategia de dos branches principales y un b
 
 \item master: Esta branch aloja checkpoints del proyecto, por lo que el código en la misma debe ser testeado antes de trasladarse y debe tomarse como puntos de referencia en casos de fallo del sistema. Ningún usuario tiene autorización para realizar push a esta branch, por lo que hasta los administradores del proyecto deben abrir un pull request y esperar que este sea aprobado para efectuar cambios.
 
-\item dev: Branch de desarrollo, sale de el último commit de master y de ella se deben abrir las branches de nuevas funcionalidades, es una branch de adaptación de código, por lo que su estado no es tan estable como master. Los usuarios tampoco tienen permitido realizar push directos, por lo que deberán abrir un pull request para mergear las branches de funcionalidades.
+\item dev: Branch de desarrollo, sale del último commit de master y de ella se deben abrir las branches de nuevas funcionalidades, es una branch de adaptación de código, por lo que su estado no es tan estable como master. Los usuarios tampoco tienen permitido realizar push directos, por lo que deberán abrir un pull request para mergear las branches de funcionalidades.
 
 \item branches de funcionalidades: son la estrategia a seguir para desarrollar nuevas funcionalidades, los desarrolladores deben ir pusheando sus cambios y al terminar una tarea, recién solicitar reflejar estos cambios en dev.
 
 \end{itemize}
 
 \section{PlatformIO}
-Es un IDE creado para un ambiente de desarrollo en IoT. Satisface una necesidad de los programadores a la hora de embarcarse en proyectos de IoT la cual es que hay muchas tecnologías diferentes con las que debe trabajar, esto hace que lograr la configuración correcta para cada una de ellas pueda ser un dolor de cabeza si no se maneja con este IDEs o similares. PlatformIO logra  integrar todo dentro del mismo ambiente de programación.~\cite{PlatformIODocs} 
+Es un IDE creado para un ambiente de desarrollo en IoT. Satisface una necesidad de los programadores a la hora de embarcarse en proyectos de IoT la cual es que hay muchas tecnologías diferentes con las que debe trabajar, esto hace que lograr la configuración correcta para cada una de ellas pueda ser un dolor de cabeza si no se maneja con este IDEs o similares. PlatformIO logra  integrar todo dentro del mismo ambiente de programación.~\cite{PlatformIODocs} Cumple una función similar a la de Arduino IDE.
 
-Por ejemplo, para programar en un board Arduino típicamente se debe descargar  el IDE de Arduino en donde se compila y sube el código. Si para cada board hubiera que hacer lo mismo, y además saber que configuración crearle a cada uno para que funcione con las diferentes librerías que se desea integrar al proyecto, lo cual representa un gran contratiempo. Lo que brinda PlatformIO es la posibilidad de descargar diferentes boards (más de 200) de desarrollo (como Arduino), así como integrar diferentes librerías para cada plataforma y todo de forma intuitiva y fácil desde una interfaz gráfica.
+Un IDE era necesario para instalar el software de la librería ESP8266MQTTMesh en el Sonoff. Como se había trabajado previamente con el IDE de Arduino se intentó por ese camino en un principio. Los resultados fueron malos, no se puedo lograr poner el sotfware en el Sonoff. Luego se leyó la documentación de la librería donde se aconsejaba trabajar con PlatformIO ya que los ejemplos venían todos con las configuraciones necesarias para poder compilar para procesadores ESP8266. 
 
-Otro factor positivo es que se integra fácilmente con Atom~\cite{Atom}, que es un IDE conocido y previamente usado por los integrantes del grupo.
+Otro factor positivo de PlatformIO es que se integra fácilmente con Atom~\cite{Atom}, que es un IDE conocido y previamente usado por los integrantes del grupo.
 
-La librería mesh que elegimos tiene como dependencias otras librerías y usa una plataforma llamada espressif~\cite{espressif-platformio}. Para configurar esto alcanza descargar el board en PlatformIO, agregar una línea en el archivo de configuración diciendo cual se usa y desde la interfaz gráfica descargar las librerías que son dependencia. 
+La librería mesh que elegimos tiene como dependencias otras librerías y usa una plataforma llamada espressif~\cite{espressif-platformio}. Para configurar esto alcanza descargar el board en PlatformIO, agregar una línea en el archivo de configuración diciendo cual se usa y desde la interfaz gráfica descargar las librerías que son dependencia. Esto es mucho más complicado con el IDE de Arduino dadas experiencias previas.
 
-PlatformIO incluso se encarga de mantener actualizadas las plataformas y librerías en su última versión. Hacer esto manualmente es una pérdida de tiempo. A continuación se muestra la vista de inicio de Atom con PlatformIO.~\qref{fig:atom-plat}
+PlatformIO incluso se encarga de mantener al usuario informado de actualizaciones de las plataformas y librerías. Hacer esto manualmente es una pérdida de tiempo. A continuación se muestra la vista de inicio de Atom con PlatformIO.~\qref{fig:atom-plat}
+
 
 \begin{figure}[h!]
   \centering
@@ -68,9 +69,15 @@ PlatformIO incluso se encarga de mantener actualizadas las plataformas y librer�
 
 Hypertext Transfer Protocol o HTTP es un protocolo de capa de aplicación que posibilita el intercambio de comunicación entre cliente y servidor. La última versión fue liberada en el 2015,  descripta en la RFC 7540. Funciona por arriba de la capas TCP/IP y es muy popular. Se basa en operaciones de solicitud/respuesta. Una vez que un cliente se conecta al servidor empieza el intercambio de solicitudes y respuestas entre ambos.
 
+\subsection{HTTPS}
+
+Hypertext Transfer Protocol Secure o HTTPS es un protocolo de capa de aplicación que posibilita el intercambio de comunicación entre cliente y servidor. Adapta el protocolo HTTP para encriptar los mensajes extremo a extremo. De esta manera se proteje de ataques llamados man-in-the-middle, donde el atacante escucha los mensajes que se intercambian. Si estos mensajes no estuvieran encriptados, como en HTTP, con simplemente verlos el atacante podría ver el contenido de los mismos. A su vez, tampoco pueden ser modificados estos mensajes gracias a su encripción. La encripción se lleva a cabo por la Transport Layer Security (TLS).
+
+El procesamiento que lleva la encripción y desencripción de los mensajes es un problema para sistemas con un procesador limitado. El procesador que se usa en el proyecto no soporta HTTPS.
+
 \subsection{CoAP}
 
-CoAP (Constrained Application Protocol) está definido en la RFC 7228 y fue creado con la concepción de ser un protocolo ligero apto para la transferencia de datos en nodos con un procesamiento limitado y redes también limitadas, como todo protocolo de IoT. Así como HTTP, este protocolo está basado en una arquitectura REST (Representational State Transfer), pero tiene una diferencia fundamental frente a HTTP la cual es que HTTP utiliza como capa de transporte TCP y CoAP UDP. 
+CoAP (Constrained Application Protocol) está definido en la RFC 7228 y fue creado con la concepción de ser un protocolo ligero apto para la transferencia de datos en nodos con un procesamiento limitado y redes también limitadas. Así como HTTP, este protocolo está basado en una arquitectura REST (Representational State Transfer), pero tiene una diferencia fundamental frente a HTTP la cual es que HTTP utiliza como capa de transporte TCP y CoAP UDP. Como UDP no es orientado a conexión, resulta más ligero que TCP y esto favorece a las arquitecturas con capacidades limitadas como lo es IoT. Al utilizar UDP, hace que el procesador gaste menos energía, haciendolo muy útil cuando se depende de una bateria para alimentarlo.No es el caso de este proyecto. A su vez, el precesador con el que se trabajó no es tan limitado como para no poder mandar mensajes que utilicen TCP. 
 
 Para ilustrar lo anteriormente dicho se puede observar en la figura~\qref{fig:http_coap}.
 
@@ -83,7 +90,7 @@ Para ilustrar lo anteriormente dicho se puede observar en la figura~\qref{fig:ht
 
 \subsection{MQTT}
 
-Message Queue Telemetry Transport (MQTT) es un estándar ISO (ISO/IEC PRF 20922) que funciona sobre TCP/IP y está pensado para correr en dispositivos con bajo nivel de procesamiento como los ESP8266. 
+Message Queue Telemetry Transport (MQTT) es un estándar ISO (ISO/IEC PRF 20922) que funciona sobre TCP/IP y está pensado para correr en dispositivos con bajo nivel de procesamiento como los ESP8266. Consume más energía que CoAP pero como el procesador no depende de una batería, esto no es una limitación para su uso. A su vez, al mandar mensajes a través de TCP, la transmisión de los paquetes es mucho más confiable que en CoAP. El modelo de comunicación que utiliza es de publicante y suscriptor, esto lo hace un protocolo modular.
 
 \begin{figure}[h!]
   \centering
@@ -92,20 +99,20 @@ Message Queue Telemetry Transport (MQTT) es un estándar ISO (ISO/IEC PRF 20922)
   \label{fig:mqtt-diag}
 \end{figure}
 
-Como se ve en la figura~\qref{fig:mqtt-diag} la arquitectura de este protocolo consiste de 3 partes fundamentales: el publisher, el broker y el subscriber. El broker es el encargado de recibir los mensajes procesar a qué topic está dirigido ese mensaje que envía el publisher y mandarlos hacia los subscribers que estén escuchando los mensajes de ese topic particular. Un topic es un String como puede ser \lstinline[columns=fixed]{"this/is/a/topic"} y subscribers que escuchan los mensajes de ese topic son los que están suscritos a ese topic. Así como CoAP, este protocolo es M2M por lo que sirve para conectar los clientes que son los nodos al servidor.
+Como se ve en la figura~\qref{fig:mqtt-diag} la arquitectura de este protocolo consiste de 3 partes fundamentales: el publisher, el broker y el subscriber. El broker es el encargado de recibir los mensajes procesar a qué topic está dirigido ese mensaje que envía el publisher y mandarlos hacia los subscribers que estén escuchando los mensajes de ese topic particular. Un topic es un String como puede ser \lstinline[columns=fixed]{"this/is/a/topic"} y subscribers que escuchan los mensajes de ese topic son los que están suscritos a ese topic.
 
 Hay conceptos introductorios que son necesarios aclarar a la hora de entender el funcionamiento del protocolo. Estos son:
 
 \subsubsection{Cliente:}
 
-En MQTT un cliente es cualquier dispositivo que esté conectado a la red MQTT. 
+En MQTT un cliente es cualquier dispositivo que esté conectado a un broker. Es decir, todos los publishers y subscribers de la red.
 
 \subsubsection{Patrón Publish/Subscribe:}
 
-En este patrón, el dispositivo que publica (publisher) un mensaje desconoce qué dispositivo/s escuchan este mensaje. El cliente publica a un broker que es el encargado de mandar ese mensaje a los subscribers, que son los  dispositivos están interesados en escuchar ese mensaje. Esto quiere decir que los publishers no saben de la existencia de los subscribers y viceversa. Por lo general los clientes pueden publicar mensajes y suscribirse a topics. 
+En este patrón, el dispositivo que publica (publisher) un mensaje desconoce qué dispositivo/s escuchan este mensaje. El cliente publica a un broker. Este es el encargado de mandar ese mensaje a los subscribers. Estos son los  dispositivos que están interesados en escuchar ese mensaje. Esto quiere decir que los publishers no saben de la existencia de los subscribers y viceversa. Por lo general los clientes pueden publicar mensajes y suscribirse a topics. 
 
 \subsubsection{Topics:}
-Un topic es un string en formato UTF-8, el cual es usado por el broker para filtrar los mensajes para cada cliente, el mismo consiste de varios niveles que se usan para poder publicar y suscribirse a varios topics, de forma general o específica, de manera fácil e intuitiva. Cada nivel está separado por un separador (\lstinline[columns=fixed]{/}). 
+Un topic es un string en formato UTF-8, el cual es usado por el broker para filtrar los mensajes para cada cliente. El mismo consiste de varios niveles que se usan para poder publicar y suscribirse a varios topics, de forma general o específica, de manera fácil e intuitiva. Entre cada nivel se sitúa un separador (\lstinline[columns=fixed]{/}). 
 
 \begin{figure}[h!]
   \centering
@@ -183,9 +190,13 @@ Aparte de los caracteres mencionados, el otro que tiene un funcionamiento especi
 
 \section{Sonoff} \label{sec:dispositivos}
 
+\subsection{ESP8266} \label{sec-ESP8266}
+
+El dispositivo Sonoff utiliza el microprocesador ESP8266EX aunque se le demonina ESP8266. Fue creado por la empresa Espressif Systems que es una empresa china. Este microprocesador utiliza un RISC y trabaja a  80 MHz pero puede llegar hasta 160 MHz. Para prenderlo se necesita una entrada de 3.3V DC y 80 mA. Este dispositivo es capaz de trabajar con el stack de protocolos TCP/IP. El ESP8266 logra un bajo consumo de potencia dado que tiene 3 modos de operacion: activo, dormido, dormido profundo. No soporta \lstinline[columns=fixed]{HTTPS}~\cite{HTTPS}. Se ganó una gran popularidad en la comunidad de programadores de IoT por lo barato que es dadas las prestaciones que ofrece. 
+
 \subsection{SPIFFS} \label{sec-SPIFFS}
 
-A pesar de que en el chip ESP8266~\cite{esp8266} el sistema de ficheros(o filesistem, FS) este guardado en el mismo chip que el firmware, cambiar el programa por un nuevo script no modificará el FS. Esto es gracias a la sectorización del espacio virtual del chip como se muestra en el diagrama~\qref{lst:SPIFFS}.
+A pesar de que en el chip ESP8266~\cite{esp8266} el sistema de ficheros(o filesistem, FS) esté guardado en el mismo chip que el firmware, cambiar el programa por un nuevo script no modificará el FS. Esto es gracias a la sectorización del espacio virtual del chip como se muestra en el diagrama~\qref{lst:SPIFFS}.
 
 \begin{figure}[thp]
 \centering
@@ -208,7 +219,7 @@ Algunas de las funciones básicas para el manejo de SPIFFS son:
 \begin{lstlisting}[language=bash]
 SPIFFS.begin()
 \end{lstlisting}
-Este método monta el sistema de archivos SPIFFS, debe ser invocado antes de intentas utilizar ninguna API del FS. Retorna \lstinline[columns=fixed]{true} o \lstinline[columns=fixed]{false} según si el montaje fue correcto o no.
+Este método monta el sistema de archivos SPIFFS, debe ser invocado antes de intentas utilizar ninguna API del FS. Devuelve \lstinline[columns=fixed]{true} o \lstinline[columns=fixed]{false} según si el montaje fue correcto o no.
 
 \textbf{format}
 \begin{lstlisting}[language=C]
@@ -246,7 +257,7 @@ Remueve un archivo dado su \lstinline[columns=fixed]{path}. Retorna \lstinline[c
 \section{USB TTL Serial} ~\qref{fig:usb-serial-adapter}
 
 \subsection{USB TTL Serial Adapter}
-Para borrar el código inicial con el que vienen instalados los Sonoff era necesaria una conexión desde el USB de la computadora o dispositivo donde se encuentra el código hacia la UART del ESP8266.
+Para borrar el código inicial con el que vienen instalados los Sonoff es necesaria una conexión desde el USB de la computadora, o dispositivo donde se encuentra el código, a la UART del ESP8266.
 
 \begin{figure}[h!]
   \centering
@@ -255,8 +266,7 @@ Para borrar el código inicial con el que vienen instalados los Sonoff era neces
   \label{fig:usb-serial-adapter}
 \end{figure}
 
-Para lograrlo, se compraron dispositivos llamados adaptadores USB a TTL serial. De un lado se le conecta un cable mini USB y del otro lado se conectan jumpers que salen de los pines VCC, GRD, Tx, Rx, mientras que se dejan otros 2 pines libres que son el DTR y el CTS. Este chip tiene un jumper para elegir si la salida es de 3,3V o 5V.
-
+Para lograrlo, se compraron dispositivos llamados adaptadores USB a TTL serial. De un lado se le conecta un cable mini USB y del otro lado se conectan jumpers que salen de los pines VCC, GRD, Tx, Rx del USB Serial Adapter, mientras que se dejan otros 2 pines libres que son el DTR y el CTS. Este chip tiene un jumper para elegir si la salida es de 3,3V o 5V. En el caso de este proyecto, se necesitan 3,3V de salida.
 
 \subsection{USB TTL Serial Cable} ~\qref{fig:usb-serial-cable}
 
@@ -273,7 +283,7 @@ Otra posibilidad que se consideró fueron cables USB a TTL serial que como se ve
 
 \subsection{Rapsberry Pi 3} ~\qref{fig:rpi3}
 
-Los Raspberry Pi  (RPi) son computadoras que vienen en un solo circuito (single-board computer), incluyen el microprocesador, la memoria, los input/outputs, la conexión HDMI. Fueron creados en el Reino Unido educar acerca de computación así como para integrar sistemas donde se necesite hardware de bajo costo. Raspberry Pi ha ganado popularidad por todas las prestaciones que da, para el poco costo que tiene.
+Los Raspberry Pi  (RPi) son computadoras que vienen en un solo circuito (single-board computer), incluyen el microprocesador, la memoria, los input/outputs, la conexión HDMI. Fueron creados en el Reino Unido con el fin de educar acerca de computación, así como para integrar sistemas donde se necesite hardware de bajo costo. Raspberry Pi ha ganado popularidad por todas las prestaciones que da, con el poco costo que tiene.
 
 \begin{figure}[h!]
   \centering
@@ -282,14 +292,13 @@ Los Raspberry Pi  (RPi) son computadoras que vienen en un solo circuito (single-
   \label{fig:rpi3}
 \end{figure}
 
-Se han desarrollado varios modelos, el que se utiliza en el proyecto es el Raspberry Pi 3 Model B es más reciente.
-Requiere una tarjeta microSD, su procesador es de 1,2GHz, memoria RAM de 1Gb y cuenta con las siguientes características entrada Ethernet (RJ-45), 17 GPIOs, alimentación de 5V a través de micro USB o GPIO, salida HDMI, 1 GB de RAM, CPU 64-bit quad-core ARMv8, 4 puertos USB.
-Este modelo trae integrado WiFi 802.11n y Bluetooth 4.1.
+Se han desarrollado varios modelos. El que se utiliza en el proyecto es el Raspberry Pi 3 Model B que es más reciente. Cuenta con las siguientes características: requiere una tarjeta microSD, su procesador es de 1,2GHz, memoria RAM de 1Gb y  entrada Ethernet (RJ-45), 17 GPIOs, alimentación de 5V a través de micro USB o GPIO, salida HDMI, 1 GB de RAM, CPU 64-bit quad-core ARMv8, 4 puertos USB. Este modelo trae integrado WiFi 802.11n y Bluetooth 4.1.
+
 Su precio es de aproximadamente USD 40.
 
 \subsection{Raspberry Pi 2 B} ~\qref{fig:rpi2}
 
-La tarjeta de memoria que se le coloca cambia de SD a microSD y el procesador es de 900MHz. Este modelo no cuenta con módulo de WiFi ni Bluetooth integrado, por lo que se debe conectar un dongle en caso de requerir estas características. A pesar de esto, su precio es igual o mayor que el RPi 3.
+La tarjeta de memoria que se le coloca cambia de SD a microSD y el procesador es de 900MHz. Este modelo no cuenta con módulo de WiFi ni Bluetooth integrado, por lo que se debe conectar un dongle en caso de requerir estas características, como es el caso de este proyecto en el cual se usa un dongle para crear una red WiFi. Esta red es la que se usa para transportar los mensajes MQTT de los ESP8266 al broker. A pesar de esto, su precio es igual o mayor que el RPi 3 que si tiene esta funcionalidad integrada.
 
 \begin{figure}[h!]
   \centering
@@ -309,7 +318,7 @@ Este single-board computer fue influenciado fuertemente por el RPi en su diseño
 \end{figure}
 
 \subsection{BeagleBone Black} ~\qref{fig:bbb}
-Esta plataforma cuenta con similares características que las anteriores, procesador de 1Ghz, memoria de 512MB, incluyendo también una aceleradora gráfica de 3D y un acelerador NEON de punto flotante, haciéndolo altamente performante para cálculos vectoriales. Sus conexiones son USB, Ethernet, HDMI , 2x 46 pin headers. Su valor es de aproximadamente USD 63.
+Esta plataforma cuenta con similares características que las anteriores, procesador de 1Ghz, memoria de 512MB, incluyendo también una aceleradora gráfica de 3D y un acelerador NEON de punto flotante, haciéndolo altamente performante para cálculos vectoriales. Sus conexiones son USB, Ethernet, HDMI , 2x 46 pin headers. Su precio es de aproximadamente USD 63.
 
 \begin{figure}[h!]
   \centering
@@ -350,7 +359,7 @@ Es un sistema de gestión de paquetes utilizado para instalar y administrar paqu
 \subsection{virtualenvs}
 
 Esta es una herramienta ampliamente utilizada por desarrolladores Python, la misma permite aislar el ambiente de desarrollo del resto de los paquetes Python instalados en el computador del desarrollador. Esto facilita el control de versión de paquetes y permite que el ambiente de desarrollo y producción sean tan similares como sea posible. 
-La creación y uso de un virtual env (venv) es muy sencilla, a continuación se muestran los comandos a utilizar:
+La creación y uso de un virtual env (venv) es muy sencilla. A continuación se muestran los comandos a utilizar:
 
 \begin{itemize}
 \item Instalar la herramienta virtualenvwrapper:
@@ -386,9 +395,10 @@ La creación y uso de un virtual env (venv) es muy sencilla, a continuación se 
 \section{Flask}
 Se puede leer la descripción "Flask is a micro web development framework for Python."~\cite{FlaskDocs} en la página oficial de Flask, pero qué significa esto?
 
-"Micro" no significa que toda la aplicación web deba estar contenida en un sólo archivo de Python (aunque bien podría estarlo), ni significa que Flask carece de funcionalidades. El término "micro" se refiere a que Flask tiene como objetivo mantener el núcleo simple pero extensible, lo que es sumamente útil en casos como el de este proyecto, donde se tiene componentes de hardware con capacidades limitadas, y Flask permite agregar sólo las funcionalidades necesarias, ahorrando recursos que otras soluciones menos flexibles y personalizables con funcionalidades fijas consumirían.
+"Micro" no significa que toda la aplicación web deba estar contenida en un sólo archivo de Python (aunque bien podría estarlo), ni significa que Flask carece de funcionalidades. El término "micro" se refiere a que Flask tiene como objetivo mantener el núcleo simple pero extensible, lo que es sumamente útil en casos como el de este proyecto, donde se tiene componentes de hardware con capacidades limitadas. Flask permite agregar sólo las funcionalidades necesarias, ahorrando recursos que otras soluciones menos flexibles y personalizables consumirían.
+
 Una frase que describe muy bien a esta implementación es que "Flask puede ser todo lo que necesitas y nada más." 
-Para lograr esto, Flask soporta extensiones para agregar todas las funcionalidades que se necesites como si fueran implementadas por él mismo. Algunas de las librerías disponibles permiten integración con bases de datos, validación de formularios, manejo de subida de archivos, varias tecnologías open source de autenticación, entre otras.
+Para lograr esto, Flask soporta extensiones para agregar todas las funcionalidades que se necesitan como si fueran implementadas por él mismo. Algunas de las librerías disponibles permiten integración con bases de datos, validación de formularios, manejo de subida de archivos, varias tecnologías open source de autenticación, entre otras.
 
 Otra de las características de Flask que lo hacen atractivo para proyectos de desarrollo es la facilidad con la que se agregan o intercambian estos componentes, ya que se pueden tomar decisiones en el proceso de desarrollo pudiendo reutilizar gran parte del código, por ejemplo un cambio de que base de datos utilizar afectaría al servidor únicamente en modificar la extensión a utilizar.
 
@@ -419,7 +429,9 @@ Algunos conceptos que se podrían comparar en estas arquitecturas son los siguie
 React es una librería de JavaScript desarrollada por Facebook para construir interfaces de usuario. Se basa en la construcción mediante componentes reutilizables, los cuales la librería se encarga de actualizar según cambie el estado al que están relacionados. Estas características hacen de React una opción muy atractiva a la hora de desarrollar aplicaciones web, ya que es fácil de debuggear el código y replicar estados de falla de las aplicaciones.
 
 Otro aspecto de esta librería que la coloca en la cima de las opciones de las empresas, tanto startups como empresas del Fortune 500~\cite{reactjs}, es la capacidad de construir aplicaciones móviles nativas con React Native~\cite{reactnative}, utilizando como lenguaje de desarrollo JavaScript~\cite{js}, uno de los lenguajes más populares actualmente, además de las librerías React y React Native.
-La ventaja de esta forma de desarrollar aplicaciones móviles es que a diferencia de PhoneGap y otros wrappers de aplicaciones web, con React Native no se construye una aplicación híbrida, sino que se desarrolla con las mismas piezas que utilizando Objective-C o Java, sólo que estos bloques se consolidan usando JavaScript y React.
+
+La ventaja de esta forma de desarrollar aplicaciones móviles es que a diferencia de PhoneGap y otros wrappers de aplicaciones web, con React Native no se construye una aplicación híbrida, sino que se desarrolla con las mismas piezas que utilizando Objective-C o Java, sólo que estos bloques se juntan usando JavaScript y React. Es decir, los bloques son seleccionados a partir de código en JavaScript y React.
+
 Esto permite acceder a más funcionalidades específicas de los dispositivos móviles y hace que la aplicación sea apreciablemente más veloz y performante.
 
 \section{Cron}
@@ -470,8 +482,11 @@ Al firewall virtual se lo llama Amazon EC2 Security Groups y al crear uno se lo 
 Este servicio es ofrecido de forma gratuita por el primer año para computadoras con procesamiento, ram y red limitada. De esta forma, si se necesita un servidor con pocos requerimientos, se puede usar este servicio para virtualizar el contenido del mismo y no tener que preocuparse por la alimentación u otros elementos físicos del servidor.
 
 \section{Mycroft}
-Mycroft es el primer asistente virtual open source, y está diseñado para ser ejecutado en una computadora personal y hasta en un Raspberry Pi. este software open source está a total disposición para ser modificado, extendido o mejorado. 
-La instalación del mismo incluye algunos skills básicos, algunas órdenes que se pueden hacer incluyen:
+Un asistente virtual es una herramienta de software que le sirve a los usuarios de los sistemas informáticos para automatizar actividades y limitar la interacción que el usuario necesita para realizar una acción o conjunto de acciones en el sistema. 
+
+Los skills 
+
+Mycroft es el primer asistente virtual open source, y está diseñado para ser ejecutado en una computadora personal y hasta en un Raspberry Pi. Este software open source está a total disposición para ser modificado, extendido o mejorado. La instalación del mismo incluye algunos skills básicos. Los skills son lo que le da la funcionalidad a Mycroft. Estos son los que ayudan a mycroft a contestar algunas cosas como:
 
 \begin{itemize}
 
