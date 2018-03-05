@@ -1,5 +1,9 @@
 \chapter{Marco Metodológico}
 
+\section{Introducción}
+En este capítulo se describirán los procesos de investigación y desarrollo llevados a cabo a lo largo del proyecto. Estas descripciones se tomaron como guías a la hora de llevar a cabo el proyecto, permitiendo que sea posible la colaboración de los miembros del equipo sin entorpecerse mutuamente y ayudando a no salirse de los lineamientos preestablecidos.
+También se describirán las pautas acordadas, tanto limitaciones como entregas acordadas. Se mencionarán evaluaciones de supuestos y riesgos que se consideran pertinentes para el proyecto y su desarrollo.
+
 \section{Tareas comprendidas y no comprendidas}
 Tareas comprendidas:
 
@@ -17,7 +21,7 @@ configuración de interruptores inteligentes, además de la inclusión del asist
 \item Investigación de tecnologías de comunicación, lenguajes de programación,
 microcomputadoras y controladores orientados a IoT.
 
-\item La presentación del dispositivo será en el protector normal del raspberry.
+\item La presentación del dispositivo será en el protector normal del Raspberry.
 
 \end{itemize}
 
@@ -27,9 +31,9 @@ Tareas no comprendidas:
 
 \item Configuración inalámbrica de interruptores inteligentes.
 
-\item Proceso de flasheo en masa de módulos de comunicación.
+\item Proceso de flash en masa de módulos de comunicación.
 
-\item Compatibilidad de aplicación móvil con más de un SO.
+\item Compatibilidad de aplicación móvil con más de un sistema operativo.
 
 \item Plan de importación de hardware para producción.
 
@@ -46,7 +50,7 @@ Tareas no comprendidas:
 \rowcolor{green!5} Entrega de Cálculos / Rutinas con justificación de avance de 50 \% & Conectividad de interruptores y central de control. & Se investigaron las opciones para implementar la comunicación y control de los dispositivos sin una interfaz amigable y desarrollo del servidor web para conexión con Sonoff. Pruebas con Sonoff. & 15/11/2017 \\
 Entrega Borrador del Informe del PFC & Realización de documento donde se registran las investigaciones, decisiones y desarrollos.
  & Se realizó la conexión con la aplicación móvil, así como una implementación mínima del asistente personal. & 14/12/2017 \\
-\rowcolor{green!5} Entrega de Cálculos \/ Rutinas con justificación de avance de 100 \% & Prototipo del sistema finalizado & Conexión de los periféricos con el servidor central, órdenes de servidor para apagar y prender los periféricos, integración del servidor con el asistente personal, descubrimiento de todos los dispositivos de la red, scipts de voz generales. & 14/02/2018 \\
+\rowcolor{green!5} Entrega de Cálculos \/ Rutinas con justificación de avance de 100 \% & Prototipo del sistema finalizado & Conexión de los periféricos con el servidor central, órdenes de servidor para apagar y prender los periféricos, integración del servidor con el asistente personal, descubrimiento de todos los dispositivos de la red, scripts de voz generales. & 14/02/2018 \\
 \bottomrule
 \end{tabular}
  \caption{\textit{Entregables: descripción y fecha}}
@@ -74,11 +78,34 @@ También es posible que alguno de los componentes se rompa por un mal uso dada l
 
 \section{Estructura de Desglose de Trabajo (EDT)}
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth, keepaspectratio]{images/EDT}
   \caption{\textit{Estructura de Desglose de Trabajo.}}
   \label{fig:edt}
+\end{figure}
+
+\subsection{Acercamientos}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/planificacion_edt}
+  \caption{\textit{EDT - Planificación.}}
+  \label{fig:planificacion_edt}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/dude_1_edt}
+  \caption{\textit{EDT - DUDE parte 1.}}
+  \label{fig:dude_1_edt}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, keepaspectratio]{images/dude_2_edt}
+  \caption{\textit{EDT - DUDE parte 2.}}
+  \label{fig:dude_2_edt}
 \end{figure}
 
 \section{Desglose de Paquetes de Trabajo en Actividades}
@@ -87,7 +114,7 @@ También es posible que alguno de los componentes se rompa por un mal uso dada l
 
 \subsection{Protocolos}
 La elección de protocolos consistió en dos rondas, donde el primer acercamiento fue absolutamente teórico, se basó en la investigación por medio de papers y de la documentación oficial en Internet de los protocolos, para descartar varios de ellos, y así reducir el número de posibilidades.
-Luego se investigó implementaciones y hardware disponible para los protocolos elegidos, siendo esta una investigación más práctica, donde se tuvo en cuenta la calidad y madurez de las librerías desarrolladas para cada uno, así como el acceso y precio de los módulos correspondientes. Otro punto importante al momento de decidir fue la comunidad creada alrededor de los protocolos y plataformas de desarrollo, ya que se sabía que su apoyo sería indispensable para reducir la curva de aprendizaje y evitar caer en errores comunes sin tener una fuente rápida y efectiva para despejar dudas.
+Luego se investigaron implementaciones y hardware disponible para los protocolos elegidos, siendo esta una investigación más práctica, donde se tuvo en cuenta la calidad y madurez de las librerías desarrolladas para cada uno, así como el acceso y precio de los módulos correspondientes. Otro punto importante al momento de decidir fue la comunidad creada alrededor de los protocolos y plataformas de desarrollo, ya que se sabía que su apoyo sería indispensable para reducir la curva de aprendizaje y evitar caer en errores comunes sin tener una fuente rápida y efectiva para despejar dudas.
 
 \subsection{Librerías}
 
@@ -158,7 +185,7 @@ Los pasos para su preparación fueron los siguientes:
 
 \begin{itemize}
 
-\item Compra y espera de entrega. Se realizaron dos compras, una express de 2 unidades y otra de envío gratuito con 9 unidades, una de ellas un Sonoff Dual.
+\item Compra y espera de entrega. Se realizaron dos compras, una express de dos unidades y otra de envío gratuito con nueve unidades, una de ellas un Sonoff Dual.
 
 \item Adaptación física para desarrollo, se soldaron las conexiones y se confeccionó un switch físico para poder reiniciar fácilmente el dispositivo.
 
@@ -169,8 +196,3 @@ Los pasos para su preparación fueron los siguientes:
 \item Con Atom y el plug-in de PlatformIO se flashea el firmware desarrollado al componente.
 
 \end{itemize}
-
-
-
-
-

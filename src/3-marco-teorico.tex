@@ -2,7 +2,7 @@
 
 \section{Arquitectura del sistema}
 
-En la figura~\qref{fig:dude-arq} se pueden apreciar los componentes del sistema y cómo interaccionan entre ellos. Además se puede observar los protocolos que utilizan para estas interacciones, a continuación se presentarán los conceptos básicos del sistema.
+En la figura~\qref{fig:dude-arq} se pueden apreciar un primer acercamiento a los componentes del sistema y cómo interaccionan entre sí. Además se pueden observar los protocolos que se utilizan para estas interacciones. A continuación se presentarán los conceptos básicos del sistema, siendo que en secciones posteriores se detallará más minuciosamente tanto los dipositivos~\qref{sec:dispositivos} en sí, como las interacciones ~\qref{sec:protocolos}.
 
 \begin{figure}[h!]
   \centering
@@ -32,7 +32,7 @@ Algunos conceptos básicos a manejar del mismo son:
 
 \end{itemize}
 
-Para este proyecto se utilizó una estrategia de 2 branches principales y un branch por nueva funcionalidad, las cuales se mencionan a continuación:
+Para este proyecto se utilizó una estrategia de dos branches principales y un branch por nueva funcionalidad, las cuales se mencionan a continuación:
 
 \begin{itemize}
 
@@ -53,16 +53,16 @@ Otro factor positivo es que se integra fácilmente con Atom~\cite{Atom}, que es 
 
 La librería mesh que elegimos tiene como dependencias otras librerías y usa una plataforma llamada espressif~\cite{espressif-platformio}. Para configurar esto alcanza descargar el board en PlatformIO, agregar una línea en el archivo de configuración diciendo cual se usa y desde la interfaz gráfica descargar las librerías que son dependencia. 
 
-PlatformIO incluso se encarga de mantener actualizadas las plataformas y librerías en su última versión. Hacer esto manualmente es una pérdida de tiempo.
+PlatformIO incluso se encarga de mantener actualizadas las plataformas y librerías en su última versión. Hacer esto manualmente es una pérdida de tiempo. A continuación se muestra la vista de inicio de Atom con PlatformIO.~\qref{fig:atom-plat}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.8\textwidth, keepaspectratio]{images/platformio}
+  \includegraphics[width=\textwidth, keepaspectratio]{images/platformio}
   \caption{\textit{Interfaz de Atom con PlatfromIO.}}
   \label{fig:atom-plat}
 \end{figure}
 
-\section{Protocolos IoT}
+\section{Protocolos IoT} \label{sec:protocolos}
 
 \subsection{HTTP}
 
@@ -72,12 +72,12 @@ Hypertext Transfer Protocol o HTTP es un protocolo de capa de aplicación que po
 
 CoAP (Constrained Application Protocol) está definido en la RFC 7228 y fue creado con la concepción de ser un protocolo ligero apto para la transferencia de datos en nodos con un procesamiento limitado y redes también limitadas, como todo protocolo de IoT. Así como HTTP, este protocolo está basado en una arquitectura REST (Representational State Transfer), pero tiene una diferencia fundamental frente a HTTP la cual es que HTTP utiliza como capa de transporte TCP y CoAP UDP. 
 
-Para ilustrar lo anteriormente dicho:
+Para ilustrar lo anteriormente dicho se puede observar en la figura~\qref{fig:http_coap}.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth, keepaspectratio]{images/http-coap}
-  \caption{\textit{Capaz de stack de protocolos CoAP~\cite{HTTP_CoAP_img}.}}
+  \caption{\textit{Capas de stack de protocolos CoAP~\cite{HTTP_CoAP_img}.}}
   \label{fig:http_coap}
 \end{figure}
 
@@ -135,12 +135,12 @@ En algunos casos es útil suscribirse a topics con determinadas características
 
 \begin{itemize}
 
-\item De un nivel: \lstinline[columns=fixed]{"+"}
+\item De un nivel: \lstinline[columns=fixed]{"+"} ~\qref{fig:topic-wildcard-plus}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth, keepaspectratio]{images/topic-wildcard-plus}
-  \caption{\textit{Uso de la wildcard "+".~\cite{MQTTEssentials5}.}}
+  \caption{\textit{Uso de la wildcard +. ~\cite{MQTTEssentials5}}}
   \label{fig:topic-wildcard-plus}
 \end{figure}
 
@@ -155,9 +155,9 @@ Cualquier topic que respete la estructura con un string en lugar de la wildcard 
 
 \item Multinivel: \lstinline[columns=fixed]{"#"}
 
-A diferencia la wildcard de un nivel, esta wildcard sólo puede ser colocada al final de un topic y suscribe a todo topic que comience igual que el topic suscrito, sin importar que tantos niveles tenga a continuación.
+A diferencia la wildcard de un nivel, esta wildcard sólo puede ser colocada al final de un topic y suscribe a todo topic que comience igual que el topic suscrito, sin importar que tantos niveles tenga a continuación. Esto se ilustra en las figuras. ~\qref{fig:topic-wildcard-hash}
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
 
   \begin{subfigure}[b]{0.45\textwidth}
@@ -181,7 +181,7 @@ Aparte de los caracteres mencionados, el otro que tiene un funcionamiento especi
 
 \end{itemize}
 
-\section{Sonoff}
+\section{Sonoff} \label{sec:dispositivos}
 
 \subsection{SPIFFS} \label{sec-SPIFFS}
 
@@ -243,7 +243,7 @@ SPIFFS.remove(path)
 Remueve un archivo dado su \lstinline[columns=fixed]{path}. Retorna \lstinline[columns=fixed]{true} o \lstinline[columns=fixed]{false} según si el archivo fue correctamente removido o no.
 
 
-\section{USB TTL Serial}
+\section{USB TTL Serial} ~\qref{fig:usb-serial-adapter}
 
 \subsection{USB TTL Serial Adapter}
 Para borrar el código inicial con el que vienen instalados los Sonoff era necesaria una conexión desde el USB de la computadora o dispositivo donde se encuentra el código hacia la UART del ESP8266.
@@ -258,9 +258,9 @@ Para borrar el código inicial con el que vienen instalados los Sonoff era neces
 Para lograrlo, se compraron dispositivos llamados adaptadores USB a TTL serial. De un lado se le conecta un cable mini USB y del otro lado se conectan jumpers que salen de los pines VCC, GRD, Tx, Rx, mientras que se dejan otros 2 pines libres que son el DTR y el CTS. Este chip tiene un jumper para elegir si la salida es de 3,3V o 5V.
 
 
-\subsection{USB TTL Serial Cable}
+\subsection{USB TTL Serial Cable} ~\qref{fig:usb-serial-cable}
 
-Otra posibilidad que se consideró fueron cables USB a TTL serial que como se ve en la figura (x) no tienen ningún elemento activo.
+Otra posibilidad que se consideró fueron cables USB a TTL serial que como se ve en la figura~\qref{fig:usb-serial-cable} no tienen ningún elemento activo.
 
 \begin{figure}[h!]
   \centering
@@ -271,7 +271,7 @@ Otra posibilidad que se consideró fueron cables USB a TTL serial que como se ve
 
 \section{Mini Procesadores}
 
-\subsection{Rapsberry Pi 3}
+\subsection{Rapsberry Pi 3} ~\qref{fig:rpi3}
 
 Los Raspberry Pi  (RPi) son computadoras que vienen en un solo circuito (single-board computer), incluyen el microprocesador, la memoria, los input/outputs, la conexión HDMI. Fueron creados en el Reino Unido educar acerca de computación así como para integrar sistemas donde se necesite hardware de bajo costo. Raspberry Pi ha ganado popularidad por todas las prestaciones que da, para el poco costo que tiene.
 
@@ -287,7 +287,7 @@ Requiere una tarjeta microSD, su procesador es de 1,2GHz, memoria RAM de 1Gb y c
 Este modelo trae integrado WiFi 802.11n y Bluetooth 4.1.
 Su precio es de aproximadamente USD 40.
 
-\subsection{Raspberry Pi 2 B}
+\subsection{Raspberry Pi 2 B} ~\qref{fig:rpi2}
 
 La tarjeta de memoria que se le coloca cambia de SD a microSD y el procesador es de 900MHz. Este modelo no cuenta con módulo de WiFi ni Bluetooth integrado, por lo que se debe conectar un dongle en caso de requerir estas características. A pesar de esto, su precio es igual o mayor que el RPi 3.
 
@@ -298,7 +298,7 @@ La tarjeta de memoria que se le coloca cambia de SD a microSD y el procesador es
   \label{fig:rpi2}
 \end{figure}
 
-\subsection{Banana Pi 3}
+\subsection{Banana Pi 3} ~\qref{fig:bpi3}
 Este single-board computer fue influenciado fuertemente por el RPi en su diseño, este modelo es más potente que el RPi 3, con un procesador de 1,8 GHz y memoria RAM de 2Gb, además de contar con memoria flash integrada de 8Gb, lo cual se ve reflejado en su precio que asciende a USD 80. 
 
 \begin{figure}[h!]
@@ -308,7 +308,7 @@ Este single-board computer fue influenciado fuertemente por el RPi en su diseño
   \label{fig:bpi3}
 \end{figure}
 
-\subsection{BeagleBone Black}
+\subsection{BeagleBone Black} ~\qref{fig:bbb}
 Esta plataforma cuenta con similares características que las anteriores, procesador de 1Ghz, memoria de 512MB, incluyendo también una aceleradora gráfica de 3D y un acelerador NEON de punto flotante, haciéndolo altamente performante para cálculos vectoriales. Sus conexiones son USB, Ethernet, HDMI , 2x 46 pin headers. Su valor es de aproximadamente USD 63.
 
 \begin{figure}[h!]
@@ -386,7 +386,7 @@ La creación y uso de un virtual env (venv) es muy sencilla, a continuación se 
 \section{Flask}
 Se puede leer la descripción "Flask is a micro web development framework for Python."~\cite{FlaskDocs} en la página oficial de Flask, pero qué significa esto?
 
-"Micro" no significa que toda la aplicación web deba estar contenida en un sólo archivo de Python (aunque bien podría estarlo), ni significa que Flask carece de funcionalidades. El término "micro" se refiere a que Flask tiene como objetivo mantener el núcleo simple pero extensible, lo que es sumamente útil en casos como el de este proyecto, donde se tiene componentes de hardware con capacidades limitadas, y Flask permite agregar sólo las funcionalidades necesarias, ahorrando recursos que otras soluciones menos flexibles y customizables con funcionalidades fijas consumirían.
+"Micro" no significa que toda la aplicación web deba estar contenida en un sólo archivo de Python (aunque bien podría estarlo), ni significa que Flask carece de funcionalidades. El término "micro" se refiere a que Flask tiene como objetivo mantener el núcleo simple pero extensible, lo que es sumamente útil en casos como el de este proyecto, donde se tiene componentes de hardware con capacidades limitadas, y Flask permite agregar sólo las funcionalidades necesarias, ahorrando recursos que otras soluciones menos flexibles y personalizables con funcionalidades fijas consumirían.
 Una frase que describe muy bien a esta implementación es que "Flask puede ser todo lo que necesitas y nada más." 
 Para lograr esto, Flask soporta extensiones para agregar todas las funcionalidades que se necesites como si fueran implementadas por él mismo. Algunas de las librerías disponibles permiten integración con bases de datos, validación de formularios, manejo de subida de archivos, varias tecnologías open source de autenticación, entre otras.
 
@@ -400,7 +400,8 @@ A diferencia de las bases de datos relacionales, guarda los datos en documentos 
 Esto significa que no se debe definir la estructura de estos documentos antes de utilizar la base de datos y que además los mismos pueden ir variando con el tiempo, posibilitando la reutilización de los datos si se decide agregar nuevos tipos de elementos.
 
 Algunos conceptos que se podrían comparar en estas arquitecturas son los siguientes~\cite{MongoDBDocs}:
-\begin{table}
+
+\begin{table}[H]
     \centering
     \begin{tabular}{ | l | l |}
     \hline
@@ -418,7 +419,7 @@ Algunos conceptos que se podrían comparar en estas arquitecturas son los siguie
 React es una librería de JavaScript desarrollada por Facebook para construir interfaces de usuario. Se basa en la construcción mediante componentes reutilizables, los cuales la librería se encarga de actualizar según cambie el estado al que están relacionados. Estas características hacen de React una opción muy atractiva a la hora de desarrollar aplicaciones web, ya que es fácil de debuggear el código y replicar estados de falla de las aplicaciones.
 
 Otro aspecto de esta librería que la coloca en la cima de las opciones de las empresas, tanto startups como empresas del Fortune 500~\cite{reactjs}, es la capacidad de construir aplicaciones móviles nativas con React Native~\cite{reactnative}, utilizando como lenguaje de desarrollo JavaScript~\cite{js}, uno de los lenguajes más populares actualmente, además de las librerías React y React Native.
-La ventaja de esta forma de desarrollar aplicaciones móviles es que a diferencia de PhoneGap y otros wrappers de aplicaciones web, con react native no se construye una aplicación híbrida, sino que se desarrolla con las mismas piezas que utilizando Objective-C o Java, sólo que estos bloques se consolidan usando JavaScript y React.
+La ventaja de esta forma de desarrollar aplicaciones móviles es que a diferencia de PhoneGap y otros wrappers de aplicaciones web, con React Native no se construye una aplicación híbrida, sino que se desarrolla con las mismas piezas que utilizando Objective-C o Java, sólo que estos bloques se consolidan usando JavaScript y React.
 Esto permite acceder a más funcionalidades específicas de los dispositivos móviles y hace que la aplicación sea apreciablemente más veloz y performante.
 
 \section{Cron}

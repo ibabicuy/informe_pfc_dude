@@ -48,7 +48,7 @@ Crear una red MQTT separada de la red del usuario no solo mejora la seguridad. M
 
 \subsection{Módulo MQTT Mesh}
 
-\subsubsection{Componentes:}
+\subsubsection{Componentes:} ~\qref{fig:mod-mqtt-comp}
 
 \begin{itemize}
 
@@ -82,7 +82,7 @@ Este módulo es la base del sistema y su funcionamiento es el siguiente:
 
 \subsection{Módulo de Control}
 
-\subsubsection{Componentes:}
+\subsubsection{Componentes:} ~\qref{fig:mod-ctrl-comp}
 
 \begin{itemize}
 
@@ -105,7 +105,7 @@ El servidor Flask se conecta a la red MQTT, permitiendo así suscribirse y publi
 
 \subsubsection{Aplicación web}
 
-\paragraph{Componentes:}
+\paragraph{Componentes:} ~\qref{fig:mod-ui-webapp}
 
 \begin{itemize}
 
@@ -135,7 +135,7 @@ El servidor Flask se conecta a la red MQTT, permitiendo así suscribirse y publi
 
 \subsubsection{Asistente virtual}
 
-\paragraph{Componentes:}
+\paragraph{Componentes:} ~\qref{fig:mod-ui-mycroft}
 
 \begin{itemize}
 
@@ -370,7 +370,7 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
   \label{fig:sonoff-gpio}
 \end{figure}
 En la figura~\qref{fig:sonoff-gpio} podemos apreciar que los conectores del chip ESP8266 integrado en el Sonoff son fácilmente accesibles pero no cuentan con cabezales para conectar los cables del adaptador Serial-USB, por esta razón es necesario soldar los mismos.
-Luego se debe conectar al adaptador USB/Serial para poder subir el firmware desde un computador. 
+Luego se debe conectar al adaptador USB/Serial ~\qref{fig:images/sonoff-modified} para poder subir el firmware desde un computador. 
 
 \begin{figure}[h!]
   \centering
@@ -393,13 +393,13 @@ Luego se debe conectar al adaptador USB/Serial para poder subir el firmware desd
 \subparagraph{Adaptación de interruptores analógicos}\mbox{}\\
 
 Debido a que se busca la mayor comodidad del lado del usuario y se intenta que la integración del sistema no conlleve a limitaciones, se configuraron los dispositivos Sonoff para poder ser controlados por interruptores analógicos. Ya sea del tipo utilizado comunmente en instalaciones eléctricas como interruptores digitales.
-Esto permitirá que el usuario utilizar tanto los medios usuales como las interfaces desarrolladas para interactuar con el sistema. Esto se logra conectando el interruptor entre el \lstinline[columns=fixed]{pin GPIO14} del Sonoff y tierra. logrando asi una interacción lógica con el relay interno.
+Esto permitirá que el usuario utilizar tanto los medios usuales como las interfaces desarrolladas para interactuar con el sistema. Esto se logra conectando el interruptor entre el \lstinline[columns=fixed]{pin GPIO14}~\qref{fig:sonoff-interruptor} del Sonoff y tierra. logrando asi una interacción lógica con el relay interno.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth, keepaspectratio]{images/sonoff-switch}
   \caption{\textit{Conexion de interruptores con Sonoff.}}
-  \label{fig:sonoff-gpio}
+  \label{fig:sonoff-interruptor}
 \end{figure}
 
 Esto permite que si el usuario apaga las luces con llave en la pared, luego las enciende con la aplicación y a continuación oprime la llave en la pared, la luz volverán a apagarse.
@@ -585,7 +585,7 @@ mesh = ESP8266MQTTMesh::Builder(networks, network_password, (char*)mqtt_server, 
 Los argumentos de la función \lstinline[columns=fixed]{Builder()} son:
 
 \begin{itemize}
-  \item \lstinline[columns=fixed]{networks}: es una lista de redes posibles para conectarse (generalmente es solo una), la misma debe terminar con un item vacío ("").
+  \item \lstinline[columns=fixed]{networks}: es una lista de redes posibles para conectarse (generalmente es solo una), la misma debe terminar con un ítem vacío ("").
   \item \lstinline[columns=fixed]{network_password}: es la contraseña de una red.
   \item \lstinline[columns=fixed]{mqtt_server}: es la IP del server MQTT.
   \item \lstinline[columns=fixed]{mqtt_port}: es el puerto de esa IP al cual conectarse.
@@ -681,7 +681,7 @@ Cuando le llega ese AJAX al dispositivo, verifica si la \lstinline[columns=fixed
 
 Se eligió la opción de crear crons a la hora de realizar el scheduler. Se tomó esta decisión por dos motivos: 
 \begin{itemize}
-  \item Los crones son algo fácil de manipular en linux dado que están en un archivo de texto.
+  \item Los crones son algo fácil de manipular en Linux dado que están en un archivo de texto.
   \item La flexibilidad que brinda tener una implementación propia para el solucionar el problema.
 \end{itemize}
 
@@ -689,7 +689,7 @@ La otra opción que se consideró fue la de utilizar una librería de Python esp
 
 Se desarrollaron dos scripts en bash, uno para borrar crones y otro para agregarlos. Estos scripts se llaman \lstinline[columns=fixed]{makeCron.sh} y \lstinline[columns=fixed]{removeCron.sh} respectivamente.
 \lstinline[columns=fixed]{makeCron.sh} toma dos parametros de entrada, el primero el cron que se quiere ejecutar.Esto incluye tanto el horario o repetición que se le quiere dar como el comando que se quiere ejecutar. El segundo argumento es el id del device al que se le quiere asignar ese cron. 
-\lstinline[columns=fixed]{removeCron.sh} recibe como paramentro el id del dispositivo al que se le quieren eliminar los crones.
+\lstinline[columns=fixed]{removeCron.sh} recibe como parámetro el id del dispositivo al que se le quieren eliminar los crones.
 
 \lstinline[columns=fixed]{makeCron.sh} funciona de la siguiente manera:
 
@@ -759,7 +759,7 @@ crontab ~/mycron
 rm ~/mycron
 \end{lstlisting}
 
-Estos dos scripts bash son llamados el flask en api.py. Los dos endpoints que los llaman son \lstinline[columns=fixed]{/delete_crons} y \lstinline[columns=fixed]{/add_cron}. Funcionan de la siguiente manera:
+Estos dos scripts bash son utilizados por el componente central. Los dos endpoints que los utilizan son \lstinline[columns=fixed]{/delete_crons} y \lstinline[columns=fixed]{/add_cron}. Funcionan de la siguiente manera:
 
 Endpoint \lstinline[columns=fixed]{add_cron}:
 
@@ -911,7 +911,7 @@ CONFIG_REQUIRED_FIELDS = [
 ]
 \end{lstlisting}
 
-Las funciones de obtención y actualización del documento de configuración en MongoDB se pueden ver en el anexo~\qref{anexo-falsk-mongo}.
+Las funciones de obtención y actualización del documento de configuración en MongoDB se pueden ver en el anexo~\qref{anexo-flask-mongo}.
 
 \subsubsection{Agregar dispositivos:}
 
@@ -1021,7 +1021,7 @@ Para el desarrollo final se utilizaron las herramientas y librerías \lstinline[
 
 Para la autenticación de la aplicación celular y web se utilizó la herramienta Auth0, ya que provee funcionalidades muy completas que no podrían haber sido implementadas debido a los tiempos manejados y siendo que no es este el foco del proyecto.
 Esta herramienta terceriza el servicio de autentificación, pudiendo crearse usuarios propios del servicio o utilizando varias cuentas de otras aplicaciones, entre ellas Facebook, Github y Google.
-El flujo de autenticación conlleva una redirección a una página brindada por Auth0, donde el usuario es identificado por alguno de los medios permitidos por la aplicación que solicita la autenticación.
+El flujo de autenticación conlleva una redirección a una página brindada por Auth0, donde el usuario es identificado por alguno de los medios permitidos por la aplicación que solicita la autenticación. ~\qref{fig:auth0-flow}
 Una vez autenticado el usuario, Auth0 redirige al usuario nuevamente hacia la aplicación, brindando información del usuario y un token que expira en un tiempo determinado para aumentar la seguridad.
 
 \begin{figure}[H]
@@ -1074,12 +1074,72 @@ Luego se compila y sube la aplicación corriendo el emulador y el comando \lstin
 
 Antes de comenzar el desarrollo el código de la aplicación web, se realizó un bosquejo de este en Balsamic, que permite además de dibujar sencillamente las páginas, también permite definir links que funcionan como botones, cambiando las vistas para poder definir flujos intuitivos y determinar las páginas necesarias. Una vez planificada la estructura de la página se comenzó con la implementación práctica.
 
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq01}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq02}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq03}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq04}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq05}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq06}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq07}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq08}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq09}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq10}
+    \label{fig:balsamiq}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.20\textwidth}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/balsamiq11}
+    \label{fig:balsamiq}
+  \end{subfigure}
+\caption{\textit{Vistas creadas en Balsamiq.}}
+\end{figure}
+
+
 Para el desarrollo de la aplicación se decidió adquirir un template para no tener que invertir tiempo en la parte estética de la aplicación. Para la elección del mismo se tuvo en cuenta las librerías que utilizan y la adaptabilidad a versiones móviles.
 El tema elegido fué MegaMobile de \lstinline[columns=fixed]{Enabled}~\cite{Enabled}, debido a su interfaz vistosa y el estilo de las barras laterales y botones, los cuales se adecuaban a las pantallas diseñadas en Balsamic.
 
 \subparagraph{Librería jquery-cron:}\mbox{}\\
 Debido a la utilización de cron del lado del servidor, es necesario traducir la hora, día, etc a la que el usuario quiere realizar el apagado y prendido de los dispositivos o de los grupos a el formato de cron. Para esto se utilizó una librería llamada \lstinline[columns=fixed]{jquery-cron} que simplifica esta tarea. La misma consiste en una interfaz muy simple, como se ve a continuación, que cambia el \lstinline[columns=fixed]{String} del cron generado dependiendo de lo que el usuario ingrese.
-A su vez, \lstinline[columns=fixed]{jquery-cron} es complementada por \lstinline[columns=fixed]{jquery-gentleSelect} que decora los bordes de los selectores.
+A su vez, \lstinline[columns=fixed]{jquery-cron} es complementada por \lstinline[columns=fixed]{jquery-gentleSelect} que decora los bordes de los selectores. ~\qref{fig:jquery-cron-selectors}
 
 \begin{figure}[H]
   \centering
@@ -1125,7 +1185,7 @@ $('#selector_scheduler').cron({
 
 
 \subparagraph{Interfaz móvil y web}\mbox{}\mbox{}\\
-Cuando el usuario abre por primera vez la aplicación, solo tiene la posibilidad de iniciar sesión. Esto se realiza mediante el servicio autenticación \lstinline[columns=fixed]{Auth0}. Si no se cuenta con un token de autorización no expirado, la aplicación requerirá que el usuario se identifique.
+Cuando el usuario abre por primera vez la aplicación, solo tiene la posibilidad de iniciar sesión.~\qref{fig:app-movil-home} Esto se realiza mediante el servicio autenticación \lstinline[columns=fixed]{Auth0}. Si no se cuenta con un token de autorización no expirado, la aplicación requerirá que el usuario se identifique.
 
 \begin{figure}[H]
   \centering
@@ -1134,7 +1194,7 @@ Cuando el usuario abre por primera vez la aplicación, solo tiene la posibilidad
   \label{fig:app-movil-home}
 \end{figure}
 
-Una vez que se presiona el botón de LogIn, este lleva al servicio de google Auth0 para que el usuario pueda autenticarse.
+Una vez que se presiona el botón de LogIn, este lleva al servicio de google Auth0 para que el usuario pueda autenticarse. ~\qref{fig:app-movil-home}
 
 
 \begin{figure}[H]
@@ -1145,7 +1205,7 @@ Una vez que se presiona el botón de LogIn, este lleva al servicio de google Aut
 \end{figure}
 
 Una vez que el usuario rellena sus datos y logra iniciar su sesión, la aplicación retorna con sesión iniciada, y checkea que se cuente con la configuración del Raspberry Pi.
-En caso de que no esté configurado, se muestra la interfaz de configuración, la cual permite ingresar la IP del Raspberry y al oprimir el botón enviarle un request de la configuración. Es totalmente necesaria la conexión entre dispositivo y raspberry para el funcionamiento de la aplicación, ya que es ahí donde se encuentra la base de datos con la información de dispositivos, y es sólo a travéz del dispositivo central que se puede interactuar con los demás dipositivos configurados.
+En caso de que no esté configurado, se muestra la interfaz de configuración~\qref{fig:app-web-get-raspberry-configuration}, la cual permite ingresar la IP del Raspberry y al oprimir el botón enviarle un request de la configuración. Es totalmente necesaria la conexión entre dispositivo y raspberry para el funcionamiento de la aplicación, ya que es ahí donde se encuentra la base de datos con la información de dispositivos, y es sólo a travéz del dispositivo central que se puede interactuar con los demás dipositivos configurados.
 
 \begin{figure}[H]
   \centering
@@ -1154,7 +1214,7 @@ En caso de que no esté configurado, se muestra la interfaz de configuración, l
   \label{fig:app-web-get-raspberry-configuration}
 \end{figure}
 
-Si ya se contaba con esta configuración, o luego de realizarla, se vuelve a la página principal. Aunque en este caso se cuenta con un mensaje que indica que la sesión, un botón para salir de ésta y un ícono en la esquina superior izquierda.
+Si ya se contaba con esta configuración, o luego de realizarla, se vuelve a la página principal. Aunque en este caso se cuenta con un mensaje que indica que la sesión, un botón para salir de ésta y un ícono en la esquina superior izquierda.~\qref{fig:app-movil-login-success}
 
 \begin{figure}[H]
   \centering
@@ -1186,7 +1246,7 @@ Al presionar este ícono, se desliza la barra lateral desde la izquierda. Esta c
   \item Configuración.
 \end{itemize}
 
-Al seleccionar \lstinline[columns=fixed]{Acciones programadas}, \lstinline[columns=fixed]{Agregar entidad} o \lstinline[columns=fixed]{Editar entidad} se abre un submenú en cada una que posibilita realizar estas acciones para dispositivos o para grupos.
+Al seleccionar \lstinline[columns=fixed]{Acciones programadas}, \lstinline[columns=fixed]{Agregar entidad} o \lstinline[columns=fixed]{Editar entidad} se abre un submenú en cada una que posibilita realizar estas acciones para dispositivos o para grupos.~\qref{fig:app-movil-sidebar}
 
 \begin{figure}[H]
   \centering
@@ -1209,7 +1269,7 @@ Al seleccionar \lstinline[columns=fixed]{Acciones programadas}, \lstinline[colum
 \subparagraph{Funciones del sistema}\mbox{}\mbox{}\\
 
 \textbf{Mis dispositivos}\\
-Vista que permite modificar el estado de un dispositivo previamente agregado, la lista información de dispositivos es obtenida desde el Raspberry. se muestra un ícono de una lámpara apagada o prendida dependiendo del estado actual del dispositivo. Al presionar el botón con la bombilla se envía la orden al dispositivo central, quien publica la orden y cambia el estado en la base de datos.
+Vista que permite modificar el estado de un dispositivo previamente agregado, la lista información de dispositivos es obtenida desde el Raspberry. se muestra un ícono de una lámpara apagada o prendida dependiendo del estado actual del dispositivo. Al presionar el botón con la bombilla se envía la orden al dispositivo central, quien publica la orden y cambia el estado en la base de datos.~\qref{fig:app-movil-choose-device}
 
 \begin{figure}[H]
   \centering
@@ -1219,7 +1279,7 @@ Vista que permite modificar el estado de un dispositivo previamente agregado, la
 \end{figure}
 
 \textbf{Mis grupos}\\
-Vista que permite modificar el estado de un grupo existente. Ya que estos no tienen un estado de prendido o apagado porque los dispositivos pueden encontrarse en ambos estados aunque pertenezcan al mismo grupo, se le da la opción al usuario de cambiar de estado a todos los dispositivos del grupo mediante dos botones, uno con una bombilla apagada y otro con una bombilla prendida.
+Vista que permite modificar el estado de un grupo existente. Ya que estos no tienen un estado de prendido o apagado porque los dispositivos pueden encontrarse en ambos estados aunque pertenezcan al mismo grupo, se le da la opción al usuario de cambiar de estado a todos los dispositivos del grupo mediante dos botones, uno con una bombilla apagada y otro con una bombilla prendida.~\qref{fig:app-movil-control-group}
 
 \begin{figure}[H]
   \centering
@@ -1230,7 +1290,7 @@ Vista que permite modificar el estado de un grupo existente. Ya que estos no tie
 
 
 \textbf{Elegir dispositivo}\\
-En este las funciones \lstinline[columns=fixed]{Acciones programadas} y \lstinline[columns=fixed]{Editar entidad} se debe elegir el grupo o dispositivo al que se quiere programar una accion o editar. Esto se logra con las siguientes vistas.\\
+En este las funciones \lstinline[columns=fixed]{Acciones programadas} y \lstinline[columns=fixed]{Editar entidad} se debe elegir el grupo o dispositivo al que se quiere programar una acción o editar. Esto se logra con las siguientes vistas.~\qref{fig:app-movil-choose-device}
 \begin{figure}[H]
   \centering
 
@@ -1250,7 +1310,7 @@ En este las funciones \lstinline[columns=fixed]{Acciones programadas} y \lstinli
 \end{figure}
 
 \textbf{Acciones programadas}\\
-La interfaz para agregar una acción cuenta con 3 botones, así como una interfaz gráfica brindada por la librería \lstinline[columns=fixed]{jquery-cron} explicada anteriormente para la elección de la hora, día, mes, año, día de la semana, minuto de cada hora que el usuario puede elegir para programar la acción. En la parte superior aparece el nombre del dispositivo o grupo al que se le quiere aplicar esta acción.
+La interfaz para agregar una acción cuenta con 3 botones, así como una interfaz gráfica brindada por la librería \lstinline[columns=fixed]{jquery-cron} explicada anteriormente para la elección de la hora, día, mes, año, día de la semana, minuto de cada hora que el usuario puede elegir para programar la acción. En la parte superior aparece el nombre del dispositivo o grupo al que se le quiere aplicar esta acción.~\qref{fig:app-movil-scheduler-device}
 
 Los 3 botones son: apagar, prender, eliminar. Dependiendo de si se eligió dispositivo o grupo, se mandará el id del dispositivo o grupo elegido. Si se selecciona la opción eliminar se eliminan todos los crones para el dispositivo o grupo. Si se elige prender o apagar, se mandará esa acción junto con el cron que traduce la librería que eligió el usuario y el \lstinline[columns=fixed]{id} que se explicó previamente.
 
@@ -1265,7 +1325,7 @@ Los 3 botones son: apagar, prender, eliminar. Dependiendo de si se eligió dispo
 \textbf{Agregar entidad}\\
 Esto da la posibilidad de agregar un dispositivo o un grupo.\\
 \begin{itemize}
-  \item \lstinline[columns=fixed]{Dispositivo}: Para agregar un dispositivo tiene que haber un Sonoff en modo descubrimiento, es decir, un Sonoff que tenga la luz de su led parpadeando. Esto quiere decir que está creando una red llamada \lstinline[columns=fixed]{ConnectAP}. Teniendo esto en cuenta, al seleccionar la pestaña de agregar dispositivo  aparece en pantalla un texto que indica al usuario que se conecte a la red \lstinline[columns=fixed]{ConnectAP}. Cuando este se conecta a esa red, la aplicación lo lleva a la pantalla de inicio dado que que mandaron los datos correctamente a al dispositivo y este queda correctamente agregado.
+  \item \lstinline[columns=fixed]{Dispositivo}: Para agregar un dispositivo tiene que haber un Sonoff en modo descubrimiento, es decir, un Sonoff que tenga la luz de su led parpadeando. Esto quiere decir que está creando una red llamada \lstinline[columns=fixed]{ConnectAP}. Teniendo esto en cuenta, al seleccionar la pestaña de agregar dispositivo  aparece en pantalla un texto que indica al usuario que se conecte a la red \lstinline[columns=fixed]{ConnectAP}. Cuando este se conecta a esa red, la aplicación lo lleva a la pantalla de inicio dado que que mandaron los datos correctamente a al dispositivo y este queda correctamente agregado.~\qref{fig:app-movil-add-device}
 \end{itemize}
 
 \begin{figure}[H]
@@ -1276,7 +1336,7 @@ Esto da la posibilidad de agregar un dispositivo o un grupo.\\
 \end{figure}
 
  \begin{itemize}
-  \item \lstinline[columns=fixed]{Grupo}:presenta una interfaz gráfica que lista todos los dispositivos agregados por el usuario, permitiendo seleccionar los que se desea incluir en el grupo y un elegir un nombre. Al texto que introduce el usuario se modifica para evitar problemas. Algunas de las correcciones son: sustituir espacios por uno solo, borra tabs y new lines, impone mayúscula a la primer letra del nombre. Una vez que el usuario presiona el botón confirmar, se envían esos datos al dispositivo central para que los agregue a la base de datos.
+  \item \lstinline[columns=fixed]{Grupo}:presenta una interfaz gráfica que lista todos los dispositivos agregados por el usuario, permitiendo seleccionar los que se desea incluir en el grupo y un elegir un nombre. Al texto que introduce el usuario se modifica para evitar problemas. Algunas de las correcciones son: sustituir espacios por uno solo, borra tabs y new lines, impone mayúscula a la primer letra del nombre. Una vez que el usuario presiona el botón confirmar, se envían esos datos al dispositivo central para que los agregue a la base de datos.~\qref{fig:app-movil-edit-group}
 \end{itemize}
 
 \begin{figure}[H]
@@ -1290,7 +1350,7 @@ Esto da la posibilidad de agregar un dispositivo o un grupo.\\
 \textbf{Editar entidad}\\
 La opciones que se brindan son editar dispositivo o editar grupo.\\
 \begin{itemize}
-  \item \lstinline[columns=fixed]{Dispositivo}: lleva a una interfaz con todos los dispositivos registrados y la opción de agregar un dispositivo nuevo~\qref{fig:app-movil-choose-device}.Una vez que se elige uno de ellos, se va a la interfaz de edición de dispositivo. En esta se muestra el nombre del dispositivo, que ser presionado permite la edición del mismo. Se despliegan todos los grupos registrados en la base de datos. Si el dispositivo ya pertenece a alguno de ellos, aparece con un tick a la izquierda. Todos pueden seleccionarse o dejarse de seleccionar según las preferencias del usuario. El botón de confirmar manda los Id de todos los grupos seleccionados para ese dispositivo y el nombre que está escrito en esa interfaz, este cambiado o no. También se manda el \lstinline[columns=fixed]{id} del dispositivo al que se le aplicaron los cambios y se vuelve al menú inicial.
+  \item \lstinline[columns=fixed]{Dispositivo}: lleva a una interfaz con todos los dispositivos registrados y la opción de agregar un dispositivo nuevo~\qref{fig:app-movil-choose-device}.Una vez que se elige uno de ellos, se va a la interfaz de edición de dispositivo. En esta se muestra el nombre del dispositivo, que ser presionado permite la edición del mismo. Se despliegan todos los grupos registrados en la base de datos. Si el dispositivo ya pertenece a alguno de ellos, aparece con un tick a la izquierda. Todos pueden seleccionarse o dejarse de seleccionar según las preferencias del usuario. El botón de confirmar manda los Id de todos los grupos seleccionados para ese dispositivo y el nombre que está escrito en esa interfaz, este cambiado o no. También se manda el \lstinline[columns=fixed]{id} del dispositivo al que se le aplicaron los cambios y se vuelve al menú inicial.~\qref{fig:app-movil-edit-device}
 \end{itemize}
 
 \begin{figure}[H]
@@ -1301,7 +1361,7 @@ La opciones que se brindan son editar dispositivo o editar grupo.\\
 \end{figure}
 
 \begin{itemize}
-  \item \lstinline[columns=fixed]{Grupo}: lleva a una interfaz con todos los grupos registrados además de la opción de agregar un nuevo grupo~\qref{fig:app-web-choose-group}.Una vez elegido el grupo, aparece una interfaz equivalente a la de nuevo grupo. La única diferencia es que en esta interfaz, si hay dispositivos seleccionados previamente para integrar ese grupo, aparecerán con un tick a la izquierda de su nombre en la lista de dispositivos. De forma similar a lo explicado para el editar grupo, al presionar el botón confirmar se manda el \lstinline[columns=fixed]{id} del grupo editado, una lista con los Id de los dispositivos elegidos y el nombre del grupo que aparece en pantalla.
+  \item \lstinline[columns=fixed]{Grupo}: lleva a una interfaz con todos los grupos registrados además de la opción de agregar un nuevo grupo~\qref{fig:app-web-choose-group}.Una vez elegido el grupo, aparece una interfaz equivalente a la de nuevo grupo. La única diferencia es que en esta interfaz, si hay dispositivos seleccionados previamente para integrar ese grupo, aparecerán con un tick a la izquierda de su nombre en la lista de dispositivos. De forma similar a lo explicado para el editar grupo, al presionar el botón confirmar se manda el \lstinline[columns=fixed]{id} del grupo editado, una lista con los Id de los dispositivos elegidos y el nombre del grupo que aparece en pantalla.~\qref{fig:app-movil-edit-group}
 \end{itemize}
 
 \begin{figure}[H]
@@ -1312,7 +1372,7 @@ La opciones que se brindan son editar dispositivo o editar grupo.\\
 \end{figure}
 
 \textbf{Error}\\
-En caso de haber un error de conexión con el flask, el usuario verá una pantalla de error que es la siguiente.
+En caso de haber un error de conexión con el flask, el usuario verá una pantalla de error que es la siguiente. ~\qref{fig:app-movil-error}
 
 \begin{figure}[H]
   \centering
@@ -1325,7 +1385,7 @@ En caso de haber un error de conexión con el flask, el usuario verá una pantal
 Para que la aplicación sea accesible y su mantenimiento no sea una sobrecarga, se decidieron utilizar \lstinline[columns=fixed]{AWS} (Amazon Web Services) donde se levantó una máquina virtual con \lstinline[columns=fixed]{EC2} que sirve un \lstinline[columns=fixed]{Apache HTTP Server}.
 
 \textbf{Amazon EC2}\\
-Para crear una máquina virtual, primero se necesita elegir que sistema operativo. En este proyecto, como solo se debe mostrar un prototipo, se eligió una de las opciones gratis que brinda AWS con Ubuntu de arranque. Se optó por Ubuntu dado que se tenía experiencia instalado servidores Apache ahí. 
+Para crear una máquina virtual, primero se necesita elegir que sistema operativo. En este proyecto, como solo se debe mostrar un prototipo, se eligió una de las opciones gratis que brinda AWS con Ubuntu de arranque. Se optó por Ubuntu dado que se tenía experiencia instalado servidores Apache ahí. \qref{fig:AWS1}
 
 \begin{figure}[H]
   \centering
@@ -1334,7 +1394,7 @@ Para crear una máquina virtual, primero se necesita elegir que sistema operativ
   \label{fig:AWS1}
 \end{figure}
 
-Luego de elegir el sistema operativo, hay que elegir cuanta \lstinline[columns=fixed]{RAM}, procesador, característica de red se quiere tener. En este caso, solo había una opción gratis  y que a su vez tenía todo lo que se necesitaba para el servidor. Por lo que se eligió esa.
+Luego de elegir el sistema operativo, hay que elegir cuanta \lstinline[columns=fixed]{RAM}, procesador, característica de red se quiere tener. En este caso, solo había una opción gratis  y que a su vez tenía todo lo que se necesitaba para el servidor. Por lo que se eligió esa. \qref{fig:AWS2}
 
 \begin{figure}[H]
   \centering
@@ -1343,7 +1403,7 @@ Luego de elegir el sistema operativo, hay que elegir cuanta \lstinline[columns=f
   \label{fig:AWS2}
 \end{figure}
 
-Finalmente se le debe asignar un grupo de seguridad a esa instancia como se ve a continuación.
+Finalmente se le debe asignar un grupo de seguridad a esa instancia como se ve a continuación. \qref{fig:AWS3}
 
 \begin{figure}[H]
   \centering
@@ -1352,7 +1412,7 @@ Finalmente se le debe asignar un grupo de seguridad a esa instancia como se ve a
   \label{fig:AWS3}
 \end{figure}
 
-Por lo tanto, antes de esto se creó un grupo de seguridad acorde para este servicio. Se habilitó el ping tanto como las conexiones \lstinline[columns=fixed]{TCP} en el puerto \lstinline[columns=fixed]{80}. El \lstinline[columns=fixed]{SSH} en el puerto \lstinline[columns=fixed]{22} ya estaba habilitado previamente. Todo el tráfico saliente ya está habilitado por defecto.
+Por lo tanto, antes de esto se creó un grupo de seguridad acorde para este servicio. Se habilitó el ping tanto como las conexiones \lstinline[columns=fixed]{TCP} en el puerto \lstinline[columns=fixed]{80}. El \lstinline[columns=fixed]{SSH} en el puerto \lstinline[columns=fixed]{22} ya estaba habilitado previamente. Todo el tráfico saliente ya está habilitado por defecto. \qref{fig:AWS4}
 
 \begin{figure}[H]
   \centering
@@ -1361,7 +1421,7 @@ Por lo tanto, antes de esto se creó un grupo de seguridad acorde para este serv
   \label{fig:AWS4}
 \end{figure}
 
-Luego de crear la instancia, \lstinline[columns=fixed]{AWS} da al usuario una llave para que pueda conectarse con el servidor en cuestión. La llave se puede elegir de otra ya existente o crear una nueva. El usuario guarda su llave privada, mientras que la instancia que acaba de crear se queda con la llave pública.
+Luego de crear la instancia, \lstinline[columns=fixed]{AWS} da al usuario una llave para que pueda conectarse con el servidor en cuestión. La llave se puede elegir de otra ya existente o crear una nueva. El usuario guarda su llave privada, mientras que la instancia que acaba de crear se queda con la llave pública. \qref{fig:AWS5}
 
 \begin{figure}[H]
   \centering
@@ -1370,7 +1430,7 @@ Luego de crear la instancia, \lstinline[columns=fixed]{AWS} da al usuario una ll
   \label{fig:AWS5}
 \end{figure}
 
-Terminado esto queda la máquina virtual corriendo. Hay un panel web que permite ver el estado de la misma, su IP su DNS público como se ve a continuación.
+Terminado esto queda la máquina virtual corriendo. Hay un panel web que permite ver el estado de la misma, su IP su DNS público como se ve a continuación. \qref{fig:AWS6}
 
 \begin{figure}[H]
   \centering
@@ -1384,7 +1444,7 @@ Primero se instala Apache mediante el gestor de paquetes de Ubuntu de la siguien
 \begin{lstlisting}[language=bash]
 apt-get install apache2
 \end{lstlisting}
-Luego, todo el código generado por phonegap para la plataforma de navegador se puso en la carpeta \lstinline[columns=fixed]{/var/www/html/dude}. Asimismo, se necesita que todos los llamados que van al puerto 80 sea atendido por el servidor Apache y este llame a los archivos en \lstinline[columns=fixed]{/var/www/html/dude}. 
+Luego, todo el código generado por Phonegap para la plataforma de navegador se puso en la carpeta \lstinline[columns=fixed]{/var/www/html/dude}. Asimismo, se necesita que todos los llamados que van al puerto 80 sea atendido por el servidor Apache y este llame a los archivos en \lstinline[columns=fixed]{/var/www/html/dude}. 
 
 Para lograr esto en el archivo ports.conf se tiene que configurar que apache escuche en el puerto \lstinline[columns=fixed]{80} (lo cual se hace por defecto) de la siguiente manera:
 
@@ -1416,7 +1476,7 @@ sudo service apache2 restart
 Se desarrollaron skills para el asistente virtual \lstinline[columns=fixed]{Mycroft}~\cite{Mycroft} como una de las interfaces que permitirán al usuario interactuar con el sistema, pero a diferencia de las aplicaciones móvil y web, esta interfaz tiene funcionalidades más básicas, ya que la interfaz por vos no resulta cómoda para acciones complejas, como agregar dispositivos o modificar los mismos.
 Mycroft cuenta con dos versiones en la actualidad, una para Linux y otra pensada específicamente para Raspberry Pi, llamado Picroft. La segunda contiene a la implementación de Linux además de otros archivos y configuraciones necesarios para lograr la compatibilidad de Mycroft con esta plataforma y sus drivers.
 Debido a problemas en actualizaciones en los servidores de Mycroft y debido a que el proyecto Picroft se ha enfocado más en la compatibilidad con los productos Mark 1 y Mark 2 (hardware compuesto por Raspberry Pi con micrófonos y parlantes montados), ocurrieron errores con las configuraciones de Raspberry's más generales.
-Siendo imposible la instalación correcta y funcional de Picroft, se consultó en foros de lacomunidad y nos pusimos en contacto con desarrolladores del proyecto, aportando logs de nuestras instalaciones para ayudar a descubrir y solucionar el problema (~\cite{Topic1}, ~\cite{Topic2}).
+Siendo imposible la instalación correcta y funcional de Picroft, se consultó en foros de la comunidad y nos pusimos en contacto con desarrolladores del proyecto, aportando logs de nuestras instalaciones para ayudar a descubrir y solucionar el problema (~\cite{Topic1}, ~\cite{Topic2}).
 A pesar de su apoyo no se logró el cometido, siendo que descubrimos que era un problema general y contamos con nuestros topics entre los más comentados y vistos a la semana de realizar la publicación.
 Luego de estos intentos se decidió que se debía optar por una alternativa, considerando las herramientas de Google y Amazon para esto, a pesar de que se alejaban del perfil open source y sin monetización de datos del cliente. Por estas razones y sumada la confianza en el equipo de Mycroft y en la comunidad para que se resuelvan los problemas en Picroft, se decidió por desarrollar los skills con Mycroft instalado en Linux, ya que cuando eventualmente Picroft vuelva a un estado estable, se pueden utilizar los mismos skills.
 
