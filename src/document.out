@@ -16,68 +16,70 @@
 \BOOKMARK [1][-]{section.3.3}{PlatformIO}{chapter.3}% 16
 \BOOKMARK [1][-]{section.3.4}{Protocolos IoT}{chapter.3}% 17
 \BOOKMARK [2][-]{subsection.3.4.1}{HTTP}{section.3.4}% 18
-\BOOKMARK [2][-]{subsection.3.4.2}{CoAP}{section.3.4}% 19
-\BOOKMARK [2][-]{subsection.3.4.3}{MQTT}{section.3.4}% 20
-\BOOKMARK [1][-]{section.3.5}{Sonoff}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.5.1}{SPIFFS}{section.3.5}% 22
-\BOOKMARK [1][-]{section.3.6}{USB TTL Serial}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.6.1}{USB TTL Serial Adapter}{section.3.6}% 24
-\BOOKMARK [2][-]{subsection.3.6.2}{USB TTL Serial Cable}{section.3.6}% 25
-\BOOKMARK [1][-]{section.3.7}{Mini Procesadores}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.7.1}{Rapsberry Pi 3}{section.3.7}% 27
-\BOOKMARK [2][-]{subsection.3.7.2}{Raspberry Pi 2 B}{section.3.7}% 28
-\BOOKMARK [2][-]{subsection.3.7.3}{Banana Pi 3}{section.3.7}% 29
-\BOOKMARK [2][-]{subsection.3.7.4}{BeagleBone Black}{section.3.7}% 30
-\BOOKMARK [1][-]{section.3.8}{Python}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.8.1}{pip}{section.3.8}% 32
-\BOOKMARK [2][-]{subsection.3.8.2}{virtualenvs}{section.3.8}% 33
-\BOOKMARK [1][-]{section.3.9}{Flask}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.10}{MongoDB}{chapter.3}% 35
-\BOOKMARK [1][-]{section.3.11}{React}{chapter.3}% 36
-\BOOKMARK [1][-]{section.3.12}{Cron}{chapter.3}% 37
-\BOOKMARK [1][-]{section.3.13}{Apache HTTP Server}{chapter.3}% 38
-\BOOKMARK [1][-]{section.3.14}{Amazon EC2}{chapter.3}% 39
-\BOOKMARK [1][-]{section.3.15}{Mycroft}{chapter.3}% 40
-\BOOKMARK [0][-]{chapter.4}{Marco Metodol\363gico}{}% 41
-\BOOKMARK [1][-]{section.4.1}{Introducci\363n}{chapter.4}% 42
-\BOOKMARK [1][-]{section.4.2}{Tareas comprendidas y no comprendidas}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.3}{Entregables}{chapter.4}% 44
-\BOOKMARK [1][-]{section.4.4}{Restricciones: Tiempo, presupuesto, tecnolog\355a}{chapter.4}% 45
-\BOOKMARK [1][-]{section.4.5}{Supuestos y riesgos}{chapter.4}% 46
-\BOOKMARK [1][-]{section.4.6}{Estructura de Desglose de Trabajo \(EDT\)}{chapter.4}% 47
-\BOOKMARK [2][-]{subsection.4.6.1}{Acercamientos}{section.4.6}% 48
-\BOOKMARK [1][-]{section.4.7}{Desglose de Paquetes de Trabajo en Actividades}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.8}{Procedimientos}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.8.1}{Protocolos}{section.4.8}% 51
-\BOOKMARK [2][-]{subsection.4.8.2}{Librer\355as}{section.4.8}% 52
-\BOOKMARK [2][-]{subsection.4.8.3}{Hardware}{section.4.8}% 53
-\BOOKMARK [0][-]{chapter.5}{Estructura del Contenido}{}% 54
-\BOOKMARK [1][-]{section.5.1}{Arquitectura}{chapter.5}% 55
-\BOOKMARK [1][-]{section.5.2}{M\363dulos del Sistema}{chapter.5}% 56
-\BOOKMARK [2][-]{subsection.5.2.1}{M\363dulo MQTT Mesh}{section.5.2}% 57
-\BOOKMARK [2][-]{subsection.5.2.2}{M\363dulo de Control}{section.5.2}% 58
-\BOOKMARK [2][-]{subsection.5.2.3}{M\363dulo de interfaces de usuario}{section.5.2}% 59
-\BOOKMARK [1][-]{section.5.3}{Desarrollo}{chapter.5}% 60
-\BOOKMARK [2][-]{subsection.5.3.1}{M\363dulo MQTT Mesh}{section.5.3}% 61
-\BOOKMARK [2][-]{subsection.5.3.2}{M\363dulo Controlador}{section.5.3}% 62
-\BOOKMARK [2][-]{subsection.5.3.3}{M\363dulo de interfaces de usuario}{section.5.3}% 63
-\BOOKMARK [2][-]{subsection.5.3.4}{Aportes a librer\355as de terceros}{section.5.3}% 64
-\BOOKMARK [0][-]{chapter.6}{Conclusiones}{}% 65
-\BOOKMARK [0][-]{chapter.7}{Recomendaciones}{}% 66
-\BOOKMARK [1][-]{section.7.1}{Cosas a mejorar}{chapter.7}% 67
-\BOOKMARK [1][-]{section.7.2}{Recomendaciones para futuros proyectos}{chapter.7}% 68
-\BOOKMARK [0][-]{section*.56}{Anexos}{}% 69
-\BOOKMARK [0][-]{chapter.Anexo.I}{Entregables}{}% 70
-\BOOKMARK [1][-]{section.Anexo.I.1}{Memos de reuniones}{chapter.Anexo.I}% 71
-\BOOKMARK [1][-]{section.Anexo.I.2}{Justificaci\363n de avance de 50\045}{chapter.Anexo.I}% 72
-\BOOKMARK [0][-]{chapter.Anexo.II}{C\363digo Fuente}{}% 73
-\BOOKMARK [1][-]{section.Anexo.II.1}{Sonoff}{chapter.Anexo.II}% 74
-\BOOKMARK [2][-]{subsection.Anexo.II.1.1}{main.cpp}{section.Anexo.II.1}% 75
-\BOOKMARK [2][-]{subsection.Anexo.II.1.2}{credentials.h.j2}{section.Anexo.II.1}% 76
-\BOOKMARK [2][-]{subsection.Anexo.II.1.3}{platformio.ini}{section.Anexo.II.1}% 77
-\BOOKMARK [1][-]{section.Anexo.II.2}{Raspberry Pi}{chapter.Anexo.II}% 78
-\BOOKMARK [2][-]{subsection.Anexo.II.2.1}{mosquitto.conf}{section.Anexo.II.2}% 79
-\BOOKMARK [2][-]{subsection.Anexo.II.2.2}{api.py}{section.Anexo.II.2}% 80
-\BOOKMARK [2][-]{subsection.Anexo.II.2.3}{mongo\137db\137utils.py}{section.Anexo.II.2}% 81
-\BOOKMARK [2][-]{subsection.Anexo.II.2.4}{Templates}{section.Anexo.II.2}% 82
-\BOOKMARK [2][-]{subsection.Anexo.II.2.5}{cron}{section.Anexo.II.2}% 83
+\BOOKMARK [2][-]{subsection.3.4.2}{HTTPS}{section.3.4}% 19
+\BOOKMARK [2][-]{subsection.3.4.3}{CoAP}{section.3.4}% 20
+\BOOKMARK [2][-]{subsection.3.4.4}{MQTT}{section.3.4}% 21
+\BOOKMARK [1][-]{section.3.5}{Sonoff}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.5.1}{ESP8266}{section.3.5}% 23
+\BOOKMARK [2][-]{subsection.3.5.2}{SPIFFS}{section.3.5}% 24
+\BOOKMARK [1][-]{section.3.6}{USB TTL Serial}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.6.1}{USB TTL Serial Adapter}{section.3.6}% 26
+\BOOKMARK [2][-]{subsection.3.6.2}{USB TTL Serial Cable}{section.3.6}% 27
+\BOOKMARK [1][-]{section.3.7}{Mini Procesadores}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.7.1}{Rapsberry Pi 3}{section.3.7}% 29
+\BOOKMARK [2][-]{subsection.3.7.2}{Raspberry Pi 2 B}{section.3.7}% 30
+\BOOKMARK [2][-]{subsection.3.7.3}{Banana Pi 3}{section.3.7}% 31
+\BOOKMARK [2][-]{subsection.3.7.4}{BeagleBone Black}{section.3.7}% 32
+\BOOKMARK [1][-]{section.3.8}{Python}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.8.1}{pip}{section.3.8}% 34
+\BOOKMARK [2][-]{subsection.3.8.2}{virtualenvs}{section.3.8}% 35
+\BOOKMARK [1][-]{section.3.9}{Flask}{chapter.3}% 36
+\BOOKMARK [1][-]{section.3.10}{MongoDB}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.11}{React}{chapter.3}% 38
+\BOOKMARK [1][-]{section.3.12}{Cron}{chapter.3}% 39
+\BOOKMARK [1][-]{section.3.13}{Apache HTTP Server}{chapter.3}% 40
+\BOOKMARK [1][-]{section.3.14}{Amazon EC2}{chapter.3}% 41
+\BOOKMARK [1][-]{section.3.15}{Mycroft}{chapter.3}% 42
+\BOOKMARK [0][-]{chapter.4}{Marco Metodol\363gico}{}% 43
+\BOOKMARK [1][-]{section.4.1}{Introducci\363n}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.2}{Tareas comprendidas y no comprendidas}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.3}{Entregables}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.4}{Restricciones: Tiempo, presupuesto, tecnolog\355a}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.5}{Supuestos y riesgos}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.6}{Estructura de Desglose de Trabajo \(EDT\)}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.6.1}{Acercamientos}{section.4.6}% 50
+\BOOKMARK [1][-]{section.4.7}{Desglose de Paquetes de Trabajo en Actividades}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.8}{Procedimientos}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.8.1}{Protocolos}{section.4.8}% 53
+\BOOKMARK [2][-]{subsection.4.8.2}{Librer\355as}{section.4.8}% 54
+\BOOKMARK [2][-]{subsection.4.8.3}{Hardware}{section.4.8}% 55
+\BOOKMARK [0][-]{chapter.5}{Estructura del Contenido}{}% 56
+\BOOKMARK [1][-]{section.5.1}{Arquitectura}{chapter.5}% 57
+\BOOKMARK [1][-]{section.5.2}{M\363dulos del Sistema}{chapter.5}% 58
+\BOOKMARK [2][-]{subsection.5.2.1}{M\363dulo MQTT Mesh}{section.5.2}% 59
+\BOOKMARK [2][-]{subsection.5.2.2}{M\363dulo de Control}{section.5.2}% 60
+\BOOKMARK [2][-]{subsection.5.2.3}{M\363dulo de interfaces de usuario}{section.5.2}% 61
+\BOOKMARK [1][-]{section.5.3}{Desarrollo}{chapter.5}% 62
+\BOOKMARK [2][-]{subsection.5.3.1}{M\363dulo MQTT Mesh}{section.5.3}% 63
+\BOOKMARK [2][-]{subsection.5.3.2}{M\363dulo Controlador}{section.5.3}% 64
+\BOOKMARK [2][-]{subsection.5.3.3}{M\363dulo de interfaces de usuario}{section.5.3}% 65
+\BOOKMARK [2][-]{subsection.5.3.4}{Aportes a librer\355as de terceros}{section.5.3}% 66
+\BOOKMARK [0][-]{chapter.6}{Conclusiones}{}% 67
+\BOOKMARK [0][-]{chapter.7}{Recomendaciones}{}% 68
+\BOOKMARK [1][-]{section.7.1}{Cosas a mejorar}{chapter.7}% 69
+\BOOKMARK [1][-]{section.7.2}{Recomendaciones para futuros proyectos}{chapter.7}% 70
+\BOOKMARK [0][-]{section*.56}{Anexos}{}% 71
+\BOOKMARK [0][-]{chapter.Anexo.I}{Entregables}{}% 72
+\BOOKMARK [1][-]{section.Anexo.I.1}{Memos de reuniones}{chapter.Anexo.I}% 73
+\BOOKMARK [1][-]{section.Anexo.I.2}{Justificaci\363n de avance de 50\045}{chapter.Anexo.I}% 74
+\BOOKMARK [0][-]{chapter.Anexo.II}{C\363digo Fuente}{}% 75
+\BOOKMARK [1][-]{section.Anexo.II.1}{Sonoff}{chapter.Anexo.II}% 76
+\BOOKMARK [2][-]{subsection.Anexo.II.1.1}{main.cpp}{section.Anexo.II.1}% 77
+\BOOKMARK [2][-]{subsection.Anexo.II.1.2}{credentials.h.j2}{section.Anexo.II.1}% 78
+\BOOKMARK [2][-]{subsection.Anexo.II.1.3}{platformio.ini}{section.Anexo.II.1}% 79
+\BOOKMARK [1][-]{section.Anexo.II.2}{Raspberry Pi}{chapter.Anexo.II}% 80
+\BOOKMARK [2][-]{subsection.Anexo.II.2.1}{mosquitto.conf}{section.Anexo.II.2}% 81
+\BOOKMARK [2][-]{subsection.Anexo.II.2.2}{api.py}{section.Anexo.II.2}% 82
+\BOOKMARK [2][-]{subsection.Anexo.II.2.3}{mongo\137db\137utils.py}{section.Anexo.II.2}% 83
+\BOOKMARK [2][-]{subsection.Anexo.II.2.4}{Templates}{section.Anexo.II.2}% 84
+\BOOKMARK [2][-]{subsection.Anexo.II.2.5}{cron}{section.Anexo.II.2}% 85

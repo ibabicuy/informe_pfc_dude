@@ -12,105 +12,105 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces \textit {Interfaz de Atom con PlatfromIO.}\relax }}{9}{figure.caption.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {Capas de stack de protocolos CoAP~\cite {HTTP_CoAP_img}.}\relax }}{10}{figure.caption.3}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \textit {Capas de stack de protocolos CoAP~\cite {HTTP_CoAP_img}.}\relax }}{11}{figure.caption.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.4}{\ignorespaces \textit {Diagrama de red MQTT.~\cite {MQTT_img}.}\relax }}{11}{figure.caption.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Composici\IeC {\'o}n de un topic MQTT.~\cite {MQTTEssentials5}.}\relax }}{12}{figure.caption.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Uso de la wildcard +. ~\cite {MQTTEssentials5}}\relax }}{12}{figure.caption.6}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Uso de la wildcard +. ~\cite {MQTTEssentials5}}\relax }}{13}{figure.caption.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.7}{\ignorespaces \textit {Topics ejemplo.~\cite {MQTTEssentials5}.}\relax }}{13}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.9}{\ignorespaces \textit {Diagrama de SPIFFS en memoria}\relax }}{14}{figure.caption.9}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces \textit {Diagrama de SPIFFS en memoria}\relax }}{15}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.10}{\ignorespaces \textit {USB Serial Adapter.~\cite {USBSerialAdapter}.}\relax }}{15}{figure.caption.10}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces \textit {USB Serial Adapter.~\cite {USBSerialAdapter}.}\relax }}{17}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.11}{\ignorespaces \textit {USB Serial Cable.~\cite {USBSerialCable}.}\relax }}{16}{figure.caption.11}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces \textit {USB Serial Cable.~\cite {USBSerialCable}.}\relax }}{18}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.12}{\ignorespaces \textit {Raspberry Pi 3.~\cite {RPi3}.}\relax }}{17}{figure.caption.12}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces \textit {Raspberry Pi 3.~\cite {RPi3}.}\relax }}{18}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.13}{\ignorespaces \textit {Raspberry Pi 2.~\cite {RPi2}.}\relax }}{18}{figure.caption.13}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces \textit {Raspberry Pi 2.~\cite {RPi2}.}\relax }}{19}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.14}{\ignorespaces \textit {Banana Pi M3.~\cite {Banana3}.}\relax }}{18}{figure.caption.14}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces \textit {Banana Pi M3.~\cite {Banana3}.}\relax }}{20}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.15}{\ignorespaces \textit {BeagleBone Black.~\cite {BeagleB}.}\relax }}{19}{figure.caption.15}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \textit {Estructura de Desglose de Trabajo.}\relax }}{30}{figure.caption.18}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \textit {EDT - Planificaci\IeC {\'o}n.}\relax }}{30}{figure.caption.19}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \textit {EDT - DUDE parte 1.}\relax }}{31}{figure.caption.20}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \textit {EDT - DUDE parte 2.}\relax }}{31}{figure.caption.21}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces \textit {BeagleBone Black.~\cite {BeagleB}.}\relax }}{20}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \textit {Redes en el sistema.}\relax }}{37}{figure.caption.22}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \textit {Estructura de Desglose de Trabajo.}\relax }}{32}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \textit {Componentes del M\IeC {\'o}dulo MQTT Mesh.}\relax }}{38}{figure.caption.23}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \textit {EDT - Planificaci\IeC {\'o}n.}\relax }}{32}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \textit {Componentes del M\IeC {\'o}dulo de Control.}\relax }}{39}{figure.caption.24}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \textit {EDT - DUDE parte 1.}\relax }}{33}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces \textit {Componentes del M\IeC {\'o}dulo de UI para Aplicaci\IeC {\'o}n M\IeC {\'o}vil.}\relax }}{40}{figure.caption.25}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \textit {EDT - DUDE parte 2.}\relax }}{33}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces \textit {Componentes del M\IeC {\'o}dulo de UI para Asistente Virtual.}\relax }}{41}{figure.caption.26}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces \textit {Conexiones del ESP8266 expuestas por el Sonoff.}\relax }}{47}{figure.caption.27}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \textit {Redes en el sistema.}\relax }}{39}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces \textit {Sonoff modificado.}\relax }}{47}{figure.caption.28}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \textit {Componentes del M\IeC {\'o}dulo MQTT Mesh.}\relax }}{40}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces \textit {Conexion de interruptores con Sonoff.}\relax }}{48}{figure.caption.29}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \textit {Componentes del M\IeC {\'o}dulo de Control.}\relax }}{41}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces \textit {Vista de p\IeC {\'a}gina principal provisoria.}\relax }}{67}{figure.caption.31}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \textit {Componentes del M\IeC {\'o}dulo de UI para Aplicaci\IeC {\'o}n M\IeC {\'o}vil.}\relax }}{42}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces \textit {Flujo de autenticaci\IeC {\'o}n con Auth0.}\relax }}{68}{figure.caption.32}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \textit {Componentes del M\IeC {\'o}dulo de UI para Asistente Virtual.}\relax }}{43}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces \textit {Vistas creadas en Balsamiq.}\relax }}{70}{figure.caption.33}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces \textit {Conexiones del ESP8266 expuestas por el Sonoff.}\relax }}{49}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces \textit {Selectores jquery-cron.}\relax }}{71}{figure.caption.34}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces \textit {Sonoff modificado.}\relax }}{49}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces \textit {P\IeC {\'a}gina de inicio.}\relax }}{73}{figure.caption.35}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces \textit {Conexion de interruptores con Sonoff.}\relax }}{50}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces \textit {D.U.D.E. Auth0 Log In}\relax }}{73}{figure.caption.36}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces \textit {Vista de p\IeC {\'a}gina principal provisoria.}\relax }}{69}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces \textit {P\IeC {\'a}gina de configuraci\IeC {\'o}n de dispositivo central.}\relax }}{74}{figure.caption.37}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces \textit {Flujo de autenticaci\IeC {\'o}n con Auth0.}\relax }}{70}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces \textit {P\IeC {\'a}gina de inicio con sesi\IeC {\'o}n iniciada.}\relax }}{74}{figure.caption.38}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces \textit {Vistas creadas en Balsamiq.}\relax }}{72}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces \textit {Vistas de barra lateral.}\relax }}{75}{figure.caption.39}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces \textit {Selectores jquery-cron.}\relax }}{73}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.18}{\ignorespaces \textit {Cambiar estado de dispositivo.}\relax }}{76}{figure.caption.40}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces \textit {P\IeC {\'a}gina de inicio.}\relax }}{75}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.19}{\ignorespaces \textit {Cambiar estado de grupo.}\relax }}{76}{figure.caption.41}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces \textit {D.U.D.E. Auth0 Log In}\relax }}{75}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.20}{\ignorespaces \textit {Vistas de selecci\IeC {\'o}n.}\relax }}{77}{figure.caption.42}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces \textit {P\IeC {\'a}gina de configuraci\IeC {\'o}n de dispositivo central.}\relax }}{76}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.21}{\ignorespaces \textit {Agregar acci\IeC {\'o}n programada.}\relax }}{78}{figure.caption.43}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces \textit {P\IeC {\'a}gina de inicio con sesi\IeC {\'o}n iniciada.}\relax }}{76}{figure.caption.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.22}{\ignorespaces \textit {Agregar dispositivo.}\relax }}{78}{figure.caption.44}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces \textit {Vistas de barra lateral.}\relax }}{77}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.23}{\ignorespaces \textit {Agregar grupo.}\relax }}{79}{figure.caption.45}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces \textit {Cambiar estado de dispositivo.}\relax }}{78}{figure.caption.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.24}{\ignorespaces \textit {Editar dispositivo.}\relax }}{80}{figure.caption.46}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces \textit {Cambiar estado de grupo.}\relax }}{78}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.25}{\ignorespaces \textit {Editar grupo.}\relax }}{80}{figure.caption.47}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces \textit {Vistas de selecci\IeC {\'o}n.}\relax }}{79}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.26}{\ignorespaces \textit {Pantalla de error.}\relax }}{81}{figure.caption.48}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces \textit {Agregar acci\IeC {\'o}n programada.}\relax }}{80}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.27}{\ignorespaces \textit {Elecci\IeC {\'o}n de SO.}\relax }}{81}{figure.caption.49}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces \textit {Agregar dispositivo.}\relax }}{80}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.28}{\ignorespaces \textit {Elecci\IeC {\'o}n de m\IeC {\'a}quina virtual.}\relax }}{82}{figure.caption.50}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces \textit {Agregar grupo.}\relax }}{81}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.29}{\ignorespaces \textit {Elecci\IeC {\'o}n de grupo de seguridad.}\relax }}{82}{figure.caption.51}
+\contentsline {figure}{\numberline {5.24}{\ignorespaces \textit {Editar dispositivo.}\relax }}{82}{figure.caption.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.30}{\ignorespaces \textit {Creaci\IeC {\'o}n de grupo de seguridad.}\relax }}{82}{figure.caption.52}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces \textit {Editar grupo.}\relax }}{82}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.31}{\ignorespaces \textit {Elecci\IeC {\'o}n de llave.}\relax }}{83}{figure.caption.53}
+\contentsline {figure}{\numberline {5.26}{\ignorespaces \textit {Pantalla de error.}\relax }}{83}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.32}{\ignorespaces \textit {Panel informativo.}\relax }}{83}{figure.caption.54}
+\contentsline {figure}{\numberline {5.27}{\ignorespaces \textit {Elecci\IeC {\'o}n de SO.}\relax }}{83}{figure.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.28}{\ignorespaces \textit {Elecci\IeC {\'o}n de m\IeC {\'a}quina virtual.}\relax }}{84}{figure.caption.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.29}{\ignorespaces \textit {Elecci\IeC {\'o}n de grupo de seguridad.}\relax }}{84}{figure.caption.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.30}{\ignorespaces \textit {Creaci\IeC {\'o}n de grupo de seguridad.}\relax }}{84}{figure.caption.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.31}{\ignorespaces \textit {Elecci\IeC {\'o}n de llave.}\relax }}{85}{figure.caption.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.32}{\ignorespaces \textit {Panel informativo.}\relax }}{85}{figure.caption.54}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

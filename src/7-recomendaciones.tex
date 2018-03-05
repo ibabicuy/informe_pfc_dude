@@ -3,12 +3,20 @@
 \section{Cosas a mejorar}
 
 Debido a los tiempos manejados no fue posible implementar la adición de Sonoff dual al proyecto. Siendo que todas las estructuras soportan estas variaciones y es cuestión de modificar el software para este nuevo dispositivo e implementar una vista en la aplicación.
-Otro dispositivo que se desea añadir al sistema es un emisor infrarrojo para poder controlar aires acondicionados, se manejó la idea de conectar un Sonoff en la alimentación de corriente del AC, pero debido a que los aires inversores pueden presentar averías si se les corta la corriente consideramos dejar esto de lado y esperar a desarrollar este nevo módulo.
+Otro dispositivo que se desea añadir al sistema es un emisor infrarrojo para poder controlar aires acondicionados, se manejó la idea de conectar un Sonoff en la alimentación de corriente del AC, pero debido a que los aires inversores pueden presentar averías si se les corta la corriente por lo que se dejó esto de lado y se optó esperar a desarrollar este nuevo módulo.
 
 Se desea en el futuro contar con una inicialización automatizada del componente principal, permitiendo una instalación de todos los componentes conectando una tarjeta SD en un Raspberry Pi instalados, el cual montaría esta tarjeta conectada e instalaría tanto el SO como las librerías y repositorios necesarios. Luego se generarían las contraseñas necesarias que se compartirán con las interfaces una vez autenticadas.
 
 Una mejora que facilitaría el proceso de instalación para usuarios menos experientes en temas de tecnología, es que en el momento de ligar una sesión de aplicación web con un dispositivo central no sea necesario introducir la dirección del segundo. Una solución práctica para esto, sería contar con un lector QR, y que los dispositivos centrales cuenten con un pegotín con la información necesaria.
 
-Ya que hubieron problemas con Mycroft que no nos permitieron enfocarnos en el desarrollo de skills para el mismo, un objetivo a futuro es el de implementar más acciones por comando de voz. Además de esto se considera que se debe integrar el sistema con otros asistentes como Alexa y Cortana a pesar de que no se alinean con los objetivos de privacidad y utilización de proyectos open source.
+Ya que hubieron problemas con Mycroft que no permitió el enfoque en el desarrollo de skills para el mismo, un objetivo a futuro es el de implementar más acciones por comando de voz. Además de esto se considera que se debe integrar el sistema con otros asistentes como Alexa y Cortana a pesar de que no se alinean con los objetivos de privacidad y utilización de proyectos open source.
 
 \section{Recomendaciones para futuros proyectos}
+
+Al momento de desarrollar código, es muy importante evitar reinventar la rueda, por lo que es preferible aportar a una librería ya existente cambios y mejoras, que intentar desarrollar algo de menor calidad desde cero. En el momento de elegir una librería para involucrarse, es importante ver que la misma cuente con un soporte y si es posible con una comunidad detrás. Esto posibilita interactuar con otros usuarios que ustilicen y aporten a la librería. Para esto es importante ver la cantidad de issues abiertos y resueltos, el estado de actividad de la librería, teniendo en cuenta la frecuencia de commits, cantidad de forks y stars.
+
+Es muy importante la utilización de pull requests en git, ya que ayuda a detectar errores y a todos los integrantes del equipo a familiarizarse con el código.
+
+En proyectos de este estilo, se debe validar las ideas del proyecto con hitos y prototipos incrementales. Sin dudar en desarrollar elementos que luego no formen parte del producto final, ya que estas instancias son sumamente importantes para focalizar el rumbo del proyecto.
+
+No abstenerse de compartir ideas a implementar con gente por fuera del proyecto, ya que obstáculos que parecen insorteables para los integrantes del equipo pueden ser resueltos fácilmente con una perspectiva externa al mismo.

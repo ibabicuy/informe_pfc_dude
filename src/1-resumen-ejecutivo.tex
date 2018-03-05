@@ -6,12 +6,16 @@ Este proyecto nace por el interés en la automatización de los objetos cotidian
 
 \section{Objetivos}
 
-Se creó un sistema de domótica altamente adaptable, de fácil instalación y uso. El mismo provee una base de de hardware y software capaces de configurarse a través de la aplicación, y permitir así que nuevos desarrolladores se enfoquen en la construcción de interfaces que consuman sus servicios. Nuestro objetivo final fue lograr un producto con un costo por el cual sea posible automatizar la totalidad de los elementos electrónicos de un hogar, oficina o empresa, a un precio varias veces menor que la competencia y brindando un servicio que compita con las soluciones actuales, dando la opción de no utilizar aplicaciones o asistentes virtuales de empresas que registren los comportamientos de los usuarios.
+Se creó un sistema de domótica altamente adaptable, de fácil instalación y uso. El mismo provee una base de de hardware y software capaces de configurarse a través de la aplicación, y permitir así que nuevos desarrolladores se enfoquen en la construcción de interfaces que consuman sus servicios. El objetivo final fue lograr un producto con un costo por el cual sea posible automatizar la totalidad de los elementos electrónicos de un hogar, oficina o empresa, a un precio varias veces menor que la competencia y brindando un servicio que compita con las soluciones actuales, dando la opción de no utilizar aplicaciones o asistentes virtuales de empresas que registren los comportamientos de los usuarios.
 
 \section{Metodología}
 
-Se programó los dispositivos Sonoff, y se utilizó un Raspberry Pi como plataforma central para contener los servicios de coordinación y configuración, permitiendo que el proceso de instalación y uso sea lo más simple e intuitivo posible. Se proveen dos métodos de interacción con el sistema, siendo estos reemplazables en un futuro con soluciones de terceros como Google Home o Alexa. 
+Se programó los dispositivos Sonoff, y se utilizó un Raspberry Pi como plataforma central para contener los servicios de coordinación y configuración, permitiendo que el proceso de instalación y uso sea lo más simple e intuitivo posible. Se proveen dos métodos de interacción con el sistema, la aplicación web y móvil necesaria para las configuraciones iniciales y la intefaz de voz con skills de Mycroft, siendo la última reemplazable en un futuro con soluciones como Google Home o Alexa. 
 
 \section{Objetivos cumplidos}
 
-Se logró el cometido de crear un sistema cuyas partes son configurables con una mínima intervención.
+Se logró el cometido de crear un sistema cuyas partes son configurables con una mínima intervención de un instalador experimentado y con acceso al código fuente.
+Se trabajó para lograr una interfaz de usuario sumamente intuitiva sin descuidar la estética de la misma.\\
+La adaptabilidad de interfaces fue comprobada, ya que una vez terminado el sistema base, la utilización de los servicios a través de las interfaces desarrolladas, tanto de voz, móvil y web fue muy sencilla, ya que se limita a implementar llamados a la API del servicio central, que se accionados por distintos eventos. En el alcance de este proyecto estas acciones son oprimir botones en el caso de la aplicación web y móvil y decir determinadas frases para la interfaz de voz. 
+El costo del sistema es de menos de USD 100 para una unidad central con cinco dispositivos, esto es sin incluir impuestos de importación. Pero debido a la Ley N° 19.592~\cite(Ley19592), en proceso de ser implementada, se espera contar con este costo base.\\
+Además de esto se logró una integración con Mycroft, por lo que no fueron necesarios servicios de terceros como Google o Amazon, que utilizan las interacciones del usuario con el sistema para crear perfiles de compradores, monetizando los datos del usuario e invadiendo su privacidad.

@@ -204,7 +204,7 @@ Si es seteado a \lstinline[columns=fixed]{True}, toda conexión suscripción y m
 \paragraph{allow\_anonymous}:
 También de valor booleano, determina si los clientes deben proveer o no nombre de usuario y contraseña al conectarse. Si se setea a false, se debe crear otro medio de autenticación para el acceso de clientes. Su valor predeterminado es true.
 
-Al indicar que sólo aceptaremos conexiones que brinden credenciales, debemos crear la contraparte verificadora de las mismas en el broker, para esto, se debe correr el siguiente comando:
+Al indicar que sólo se aceptarán conexiones que brinden credenciales, se debe crear la contraparte verificadora de las mismas en el broker, para esto, se debe correr el siguiente comando:
 
 \begin{lstlisting}[language=bash]
   $ sudo mosquitto_passwd -c /etc/mosquitto/pwfile <username>
@@ -226,7 +226,7 @@ Y se debería obtener el siguiente resultado:
   $ Subscribed (mid: 1): 0
 \end{lstlisting}
 
-Luego utilizando la misma herramienta publicar un mensaje en el topic al que nos suscribimos (utilizaremos las mismas credenciales ya que son las únicas que se configuran, aunque esto no es necesario) :
+Luego utilizando la misma herramienta, publicar un mensaje en el topic al que se ha suscripto la sesión anterior (utilizando las mismas credenciales ya que son las únicas que se configuran, aunque esto no es necesario) :
 
 \begin{lstlisting}[language=bash]
   $ mosquitto_pub -d -u <username> -P <passwd> -t test/channel -m whatever
@@ -268,7 +268,7 @@ sudo apt-get install iptables-persistent
 
 Aparecerán dos ventanas de configuración, elegir "Yes" en las dos.
 \item Configurar el DHCP server
-Editaremos el archivo \lstinline[columns=fixed]{/etc/dhcp/dhcpd.conf}.
+Se editará el archivo \lstinline[columns=fixed]{/etc/dhcp/dhcpd.conf}.
 
 \begin{lstlisting}[language=bash]
 sudo nano /etc/dhcp/dhcpd.conf
@@ -309,7 +309,7 @@ sudo nano /etc/default/isc-dhcp-server
 Y buscar INTERFACES="", agregar el nombre de la interfaz del adaptador de WiFi.
 \end{lstlisting}
 
-\item Luego se fija una IP estática para esta interfaz, para esto debemos modificar el archivo \lstinline[columns=fixed]{/etc/network/interfaces}:
+\item Luego se fija una IP estática para esta interfaz, para esto se debe modificar el archivo \lstinline[columns=fixed]{/etc/network/interfaces}:
 
 \begin{lstlisting}[language=bash]
 sudo nano /etc/network/interfaces
@@ -369,7 +369,7 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
   \caption{\textit{Conexiones del ESP8266 expuestas por el Sonoff.}}
   \label{fig:sonoff-gpio}
 \end{figure}
-En la figura~\qref{fig:sonoff-gpio} podemos apreciar que los conectores del chip ESP8266 integrado en el Sonoff son fácilmente accesibles pero no cuentan con cabezales para conectar los cables del adaptador Serial-USB, por esta razón es necesario soldar los mismos.
+En la figura~\qref{fig:sonoff-gpio} se puede apreciar que los conectores del chip ESP8266 integrado en el Sonoff son fácilmente accesibles pero no cuentan con cabezales para conectar los cables del adaptador Serial-USB, por esta razón es necesario soldar los mismos.
 Luego se debe conectar al adaptador USB/Serial ~\qref{fig:images/sonoff-modified} para poder subir el firmware desde un computador. 
 
 \begin{figure}[h!]
@@ -424,7 +424,7 @@ La configuración y vinculación de la interrupción se logran con las siguiente
 \end{lstlisting}
 
 Como se puede observar la función se ejecuta con la condición \lstinline[columns=fixed]{CHANGE}, por lo que no diferencia entre interruptor cerrado o abierto.
-Observando la función llamada, podemos notar algunas singularidades, por ejemplo, es necesario utilizar una lógica de semáforo por temporizador, ya que debido a la imperfección de los interruptores analógicos, el chip detecta diferentes cantidades de cambios en el interruptor antes de cambiar de estado, esto es conocido como efecto rebote.
+Observando la función llamada, se pueden notar algunas singularidades, por ejemplo, es necesario utilizar una lógica de semáforo por temporizador, ya que debido a la imperfección de los interruptores analógicos, el chip detecta diferentes cantidades de cambios en el interruptor antes de cambiar de estado, esto es conocido como efecto rebote.
 
 \begin{lstlisting}[language=C]
 void switch_state_changed () {
@@ -523,7 +523,7 @@ boolean bOFFExists = check_if_power_OFF_Exists();
   }
 \end{lstlisting}
 
-\subparagraph{Librería Bounce2}}\mbox{}\\
+\subparagraph{Librería Bounce2}\mbox{}\\
 Esta es una librería de Arduino que sirve para cubrirse de los problemas típicos de rebotes asociados a la utilización de botones en el hardware. Se setea el pin asociado al botón como una entrada pull up de la siguiente manera:
 
 
@@ -686,7 +686,7 @@ Se eligió la opción de crear crons a la hora de realizar el scheduler. Se tom�
   \item La flexibilidad que brinda tener una implementación propia para el solucionar el problema.
 \end{itemize}
 
-La otra opción que se consideró fue la de utilizar una librería de Python especializada en la administración de crones. Adaptar esta librería a nuestra necesidad (crones por grupo) era más compleja y no brindaba ningún beneficio en particular.
+La otra opción que se consideró fue la de utilizar una librería de Python especializada en la administración de crones. Adaptar esta librería a la necesidad del proyecto (crones por grupo) era más compleja y no brindaba ningún beneficio en particular.
 
 Se desarrollaron dos scripts en bash, uno para borrar crones y otro para agregarlos. Estos scripts se llaman \lstinline[columns=fixed]{makeCron.sh} y \lstinline[columns=fixed]{removeCron.sh} respectivamente.
 \lstinline[columns=fixed]{makeCron.sh} toma dos parametros de entrada, el primero el cron que se quiere ejecutar.Esto incluye tanto el horario o repetición que se le quiere dar como el comando que se quiere ejecutar. El segundo argumento es el id del device al que se le quiere asignar ese cron. 
@@ -867,7 +867,7 @@ sudo apt-get install libevent-dev
 sudo apt-get install python-all-dev
 \end{lstlisting}
 
-Luego instalaremos MongoDB, ya que será utilizada por el servidor Flask, para esto se ejecuta:
+Luego se instalará MongoDB, ya que será utilizada por el servidor Flask, para esto se ejecuta:
 
 \begin{lstlisting}[language=bash]
 sudo apt-get install mongodb-server
@@ -894,7 +894,7 @@ flask run --host 0.0.0.0
 \end{lstlisting}
 
 \subsubsection{Desarrollo}
-Como se mencionó anteriormente, Flask cuenta con varias extensiones para agregarle funcionalidades, en este caso fue necesario utilizar dos de ellas, \lstinline[columns=fixed]{flask_mqtt}~\cite{flask-mqtt} y \lstinline[columns=fixed]{flask_pymongo}~\cite{}.
+Como se mencionó anteriormente, Flask cuenta con varias extensiones para agregarle funcionalidades, en este caso fue necesario utilizar dos de ellas, \lstinline[columns=fixed]{flask_mqtt}~\cite{flask-mqtt} y \lstinline[columns=fixed]{flask_pymongo}~\cite{flask-pymongo}.
 \lstinline[columns=fixed]{flask_mqtt}~\cite{flask-mqtt}: es un wrapper de la librería \lstinline[columns=fixed]{paho-mqtt}~\cite{paho-mqtt} que permite conectarse a un broker MQTT, simplificando al integración de este protocolo en las aplicaciones web, maneja los eventos de recibir mensajes, loguear eventos de la red y permite suscribirse y publicar a topics del broker a la que se encuentra conectado. 
 \lstinline[columns=fixed]{flask_pymongo}~\cite{flask-pymongo}: esta librería también es un wrapper de otra para facilitar su uso y configuración en un servidor Flask, en este caso la librería adaptada es \lstinline[columns=fixed]{PyMongo}~\cite{PyMongo}. Esta librería aporta herramientas para trabajar con MongoDB en Python, presentando los documentos de las colecciones de MongoDB como un repositorio persistente y en el que es posible realizar búsquedas.
 
@@ -1070,7 +1070,7 @@ Y para la aplicación web:
 
 Para poder ir visualizando los resultados del desarrollo, se serve la aplicación en un servidor local para desarrollar la versión web y emular un móvil Android gracias a Android Studio. 
 Para levantar el servidor local basta con ejecutar \lstinline[columns=fixed]{phonegap serve}, levantando el servicio en el puerto \lstinline[columns=fixed]{3000}. En modo default cuenta con una configuración que permite la recarga automática ante cambios en el código que hicieron de esta la herramienta principal para el desarrollo de la aplicación.
-A diferencia de la aplicación web, la aplicación móvil hizo necesaria la instalación del Android Studio para contar con el servicio de emulación, ya que no se contaban con móviles a disposición. Una vez instalado android studio se debe entrar al proyecto e inicializar una instancia de un celular, pudiéndose elegir entre múltiples modelos. Luego se debe seleccionar y descargar el sistema operativo, en nuestro caso utilizamos Android Oreo en Pixel 2.
+A diferencia de la aplicación web, la aplicación móvil hizo necesaria la instalación del Android Studio para contar con el servicio de emulación, ya que no se contaban con móviles a disposición. Una vez instalado android studio se debe entrar al proyecto e inicializar una instancia de un celular, pudiéndose elegir entre múltiples modelos. Luego se debe seleccionar y descargar el sistema operativo, en este caso se utilizó Android Oreo en Pixel 2.
 Luego se compila y sube la aplicación corriendo el emulador y el comando \lstinline[columns=fixed]{phonegap run android}.
 
 Antes de comenzar el desarrollo el código de la aplicación web, se realizó un bosquejo de este en Balsamic, que permite además de dibujar sencillamente las páginas, también permite definir links que funcionan como botones, cambiando las vistas para poder definir flujos intuitivos y determinar las páginas necesarias. Una vez planificada la estructura de la página se comenzó con la implementación práctica.
@@ -1206,7 +1206,7 @@ Una vez que se presiona el botón de LogIn, este lleva al servicio de google Aut
 \end{figure}
 
 Una vez que el usuario rellena sus datos y logra iniciar su sesión, la aplicación retorna con sesión iniciada, y checkea que se cuente con la configuración del Raspberry Pi.
-En caso de que no esté configurado, se muestra la interfaz de configuración~\qref{fig:app-web-get-raspberry-configuration}, la cual permite ingresar la IP del Raspberry y al oprimir el botón enviarle un request de la configuración. Es totalmente necesaria la conexión entre dispositivo y raspberry para el funcionamiento de la aplicación, ya que es ahí donde se encuentra la base de datos con la información de dispositivos, y es sólo a travéz del dispositivo central que se puede interactuar con los demás dipositivos configurados.
+En caso de que no esté configurado, se muestra la interfaz de configuración~\qref{fig:app-web-get-raspberry-configuration}, la cual permite ingresar la IP del Raspberry y al oprimir el botón enviarle un request de la configuración. Es totalmente necesaria la conexión entre dispositivo y raspberry para el funcionamiento de la aplicación, ya que es ahí donde se encuentra la base de datos con la información de dispositivos, y es sólo a través del dispositivo central que se puede interactuar con los demás dipositivos configurados.
 
 \begin{figure}[H]
   \centering
@@ -1477,8 +1477,8 @@ sudo service apache2 restart
 Se desarrollaron skills para el asistente virtual \lstinline[columns=fixed]{Mycroft}~\cite{Mycroft} como una de las interfaces que permitirán al usuario interactuar con el sistema, pero a diferencia de las aplicaciones móvil y web, esta interfaz tiene funcionalidades más básicas, ya que la interfaz por vos no resulta cómoda para acciones complejas, como agregar dispositivos o modificar los mismos.
 Mycroft cuenta con dos versiones en la actualidad, una para Linux y otra pensada específicamente para Raspberry Pi, llamado Picroft. La segunda contiene a la implementación de Linux además de otros archivos y configuraciones necesarios para lograr la compatibilidad de Mycroft con esta plataforma y sus drivers.
 Debido a problemas en actualizaciones en los servidores de Mycroft y debido a que el proyecto Picroft se ha enfocado más en la compatibilidad con los productos Mark 1 y Mark 2 (hardware compuesto por Raspberry Pi con micrófonos y parlantes montados), ocurrieron errores con las configuraciones de Raspberry's más generales.
-Siendo imposible la instalación correcta y funcional de Picroft, se consultó en foros de la comunidad y nos pusimos en contacto con desarrolladores del proyecto, aportando logs de nuestras instalaciones para ayudar a descubrir y solucionar el problema (~\cite{Topic1}, ~\cite{Topic2}).
-A pesar de su apoyo no se logró el cometido, siendo que descubrimos que era un problema general y contamos con nuestros topics entre los más comentados y vistos a la semana de realizar la publicación.
+Siendo imposible la instalación correcta y funcional de Picroft, se consultó en foros de la comunidad y se entabló contacto con desarrolladores del proyecto, aportando logs de las instalaciones realizadas para ayudar a descubrir y solucionar el problema (~\cite{Topic1}, ~\cite{Topic2}).
+A pesar de su apoyo no se logró el cometido, siendo que se descubrió que era un problema general y los topics que se publicaron quedaron entre los más comentados y vistos a la semana de realizar la publicación.
 Luego de estos intentos se decidió que se debía optar por una alternativa, considerando las herramientas de Google y Amazon para esto, a pesar de que se alejaban del perfil open source y sin monetización de datos del cliente. Por estas razones y sumada la confianza en el equipo de Mycroft y en la comunidad para que se resuelvan los problemas en Picroft, se decidió por desarrollar los skills con Mycroft instalado en Linux, ya que cuando eventualmente Picroft vuelva a un estado estable, se pueden utilizar los mismos skills.
 
 Debido a los contratiempos se desarrollaron únicamente skills de cambio de estado de luces, cuyos llamados son:
